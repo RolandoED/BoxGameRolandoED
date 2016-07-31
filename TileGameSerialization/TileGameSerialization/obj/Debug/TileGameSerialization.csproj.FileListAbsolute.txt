@@ -1,0 +1,9 @@
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.exe.config
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.csprojResolveAssemblyReference.cache
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.Form1.resources
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.Properties.Resources.resources
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.csproj.GenerateResource.Cache
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.exe
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.pdb
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.exe
+c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.pdb

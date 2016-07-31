@@ -1,0 +1,14 @@
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\bin\Debug\BoxGame.exe.config
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\bin\Debug\BoxGame.exe
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\bin\Debug\BoxGame.pdb
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.csprojResolveAssemblyReference.cache
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.Properties.Resources.resources
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.csproj.GenerateResource.Cache
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.exe
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.pdb
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.MainMenu.resources
+c:\users\rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.Ranks.resources
+C:\Users\Rolando\documents\visual studio 2013\Projects\BoxGame\BoxGame\obj\Debug\BoxGame.MapEditor.resources
+C:\Users\Rolando\Documents\visual studio 2013\Projects\BoxGame\BoxGame\BoxGame\bin\Debug\BoxGame.exe.config
+C:\Users\Rolando\Documents\visual studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.exe
+C:\Users\Rolando\Documents\visual studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.pdb
