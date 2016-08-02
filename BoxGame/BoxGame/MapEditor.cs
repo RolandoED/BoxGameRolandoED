@@ -57,6 +57,8 @@ namespace BoxGame
         }
 
         //-BUTTONS
+        ////Decide con que Bloque quiere pintar 
+        ///y se asigna a una variable local de clase
         private void btnBorde_Click(object sender, EventArgs e)
         {
             ConQuePintar = 0;
@@ -82,17 +84,16 @@ namespace BoxGame
             ConQuePintar = 4;
         }
 
-        private void testmethod(){        
-            //for (int x = 0; x < 100; x++)
-            //{
-            //    Console.WriteLine(x+" TAG "+boxes[x].Image.Tag);
-            //}
-
+        private void testmethod(){
             foreach (var pictureBox in Controls.OfType<PictureBox>())
             {
                 Console.WriteLine(" TAG " + pictureBox.Image.Tag);
             }
         }
+
+        /// <summary>
+        /// Pasa el Array Lógico de la clase a los picture boxes
+        /// </summary>
         private void PasarArrayAPictureBoxes() {                      
             int position = 0;   
             for (int i = 0; i < Mapa.array.GetLength(0); i++)
@@ -161,7 +162,6 @@ namespace BoxGame
             {
                 for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
-
                     //if (boxes[position].Image.Tag == null)
                     //{
                     //    ClaseGlobal.ShowMessage("ERROR ");
@@ -254,6 +254,11 @@ namespace BoxGame
             //testmethod2();
         }
 
+
+        /// <summary>
+        /// Guarda en el subfolder maps los mapas como objeto serializado con el estado actual
+        /// </summary>
+        /// 
         private void button3_Click(object sender, EventArgs e)
         {
             if (asignarPicturesBoxexAArray())
@@ -271,7 +276,7 @@ namespace BoxGame
                     {
                         Mapa.MaxMovements = 25;
                     }
-                    using (Stream stream = File.Open(currentPath + "\\" + textBox1.Text, FileMode.Create))
+                    using (Stream stream = File.Open(currentPath + "\\maps\\" + textBox1.Text, FileMode.Create))
                     {
                         BinaryFormatter bin = new BinaryFormatter();
                         bin.Serialize(stream, Mapa);
@@ -296,12 +301,16 @@ namespace BoxGame
             }
         }
 
+        /// <summary>
+        /// Lee  del subfolder maps los mapas como objeto serializado con el estado actual
+        /// </summary>
+        /// 
         private void button4_Click(object sender, EventArgs e)
         {
             try
             {
                 string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
-                using (Stream stream = File.Open(currentPath + "\\" + textBox1.Text, FileMode.Open))
+                using (Stream stream = File.Open(currentPath + "\\maps\\" + textBox1.Text, FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -311,13 +320,12 @@ namespace BoxGame
                 }
                 Console.WriteLine("Se leyo correctamente el archivo Binario");
                 txtIntentosActuales.Text = "" + Mapa.MaxMovements;
-                //PasarArrayAPictureBoxes();
             }
-            catch (IOException)
+            catch (IOException eexc)
             {
+                ClaseGlobal.ShowMessage(eexc.Message);
             }
             finally {
-
                 Mapa.printArray();
                 PasarArrayAPictureBoxes();
             }

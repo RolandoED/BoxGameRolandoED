@@ -93,16 +93,6 @@ namespace BoxGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EMPTY {
-            get {
-                object obj = ResourceManager.GetObject("EMPTY", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap hotspot {
             get {
                 object obj = ResourceManager.GetObject("hotspot", resourceCulture);

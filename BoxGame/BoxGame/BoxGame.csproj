@@ -105,9 +105,6 @@
     <None Include="Resources\bgdark.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EMPTY.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\isolatedtile.png" />
   </ItemGroup>
   <ItemGroup>
