@@ -35,10 +35,12 @@ namespace BoxGame
             {                              
                 cantidad++;
             }
-            //se popula alrevez para que no quede del ultimo al primero
+            //// Se popula alrevez para que no quede del ultimo al primero
             contador = cantidad;
             foreach (var pictureBox in Controls.OfType<PictureBox>())
             {
+                //// Todos los picturebox de los lados estan disabled para poder hacer este check
+                //// al checkear si estan enabled false , se settean como borde/isolatedtile
                 if (pictureBox.Enabled == false)
                 {
                     boxes[contador] = pictureBox;
@@ -131,10 +133,10 @@ namespace BoxGame
                 }
             }
 
-            foreach (var item in boxes)
-            {
+            //foreach (var item in boxes)
+            //{
                 
-            }
+            //}
         }
 
 
