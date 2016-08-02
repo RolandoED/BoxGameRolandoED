@@ -28,5 +28,10 @@ namespace BoxGame
             MapEditor editor = new MapEditor();
             editor.Show();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

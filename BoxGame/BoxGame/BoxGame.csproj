@@ -51,6 +51,7 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Map.cs" />
     <Compile Include="MapEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,13 +120,7 @@
     <None Include="Resources\hotspot.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\terr2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\isolatedtile1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\block1.png" />
+    <None Include="Resources\terr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

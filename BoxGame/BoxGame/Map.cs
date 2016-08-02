@@ -8,10 +8,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 //using System.Web.Script.Serialization;
 using System.IO;
 
-namespace TileGameRolandoed
+
+namespace BoxGame
 {
     [Serializable()]
-    class Map
+
+    public class Map
     {
         public Map(int[,] arr)
         {
@@ -50,7 +52,6 @@ namespace TileGameRolandoed
                 }
             }
             Console.WriteLine(toPrint);
-        }
-
+        }    
     }
 }

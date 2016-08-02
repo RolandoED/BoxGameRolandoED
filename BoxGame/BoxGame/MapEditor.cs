@@ -7,28 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//
+using System.Runtime.Serialization.Formatters.Binary;
+//using System.Web.Script.Serialization;
+using System.IO;
 
 namespace BoxGame
 {
     public partial class MapEditor : Form
     {
         public PictureBox[] boxes = new PictureBox[100];
+        public Map Mapa = new Map();
 
         int ConQuePintar = 0;
-
-        int[,] array = new int[,]
-        {
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},    	                      	             
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},    	             
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},    	             
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-        };
 
         public MapEditor()
         {
@@ -47,9 +38,18 @@ namespace BoxGame
             contador = cantidad;
             foreach (var pictureBox in Controls.OfType<PictureBox>())
             {
-                boxes[contador] = pictureBox;
-                boxes[contador].Image = Properties.Resources.terr; 
-                boxes[contador].Image.Tag = "terr";
+                if (pictureBox.Enabled == false)
+                {
+                    boxes[contador] = pictureBox;
+                    boxes[contador].Image = Properties.Resources.isolatedtile;
+                    boxes[contador].Image.Tag = "isolatedtile";
+                }
+                else
+                {
+                    boxes[contador] = pictureBox;
+                    boxes[contador].Image = Properties.Resources.terr;
+                    boxes[contador].Image.Tag = "terr";
+                }
                 contador--;
             }
             Console.WriteLine("");
@@ -81,22 +81,131 @@ namespace BoxGame
             ConQuePintar = 4;
         }
 
-        private void addSidesAndCorners() {
-            int contador = 0;
-                foreach (var pictureBox in Controls.OfType<PictureBox>())
+        private void testmethod(){        
+            //for (int x = 0; x < 100; x++)
+            //{
+            //    Console.WriteLine(x+" TAG "+boxes[x].Image.Tag);
+            //}
+
+            foreach (var pictureBox in Controls.OfType<PictureBox>())
+            {
+                Console.WriteLine(" TAG " + pictureBox.Image.Tag);
+            }
+        }
+        private void PasarArrayAPictureBoxes() {                      
+            int position = 0;   
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
+            {
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
-                    Console.WriteLine(contador + " " + boxes[contador].Tag.ToString());
-                }        
+                    //Guarda en el array 2d el numero correspondiente al tile
+                    if (Mapa.array[i, xx] == 0)
+                    {
+                        boxes[position].Image = Properties.Resources.isolatedtile;
+                        boxes[position].Image.Tag = "isolatedtile";
+                    }
+                    else if (Mapa.array[i, xx] == 1)
+                    {
+                        boxes[position].Image = Properties.Resources.player;
+                        boxes[position].Image.Tag = "player";
+                    }
+                    else if (Mapa.array[i, xx] == 2)
+                    {                        
+                        boxes[position].Image = Properties.Resources.terr;
+                        boxes[position].Image.Tag = "terr";
+                    }
+                    else if (Mapa.array[i, xx] == 3)
+                    {
+                        boxes[position].Image = Properties.Resources.block;
+                        boxes[position].Image.Tag = "block";
+                    }
+                    else if (Mapa.array[i, xx] == 4)
+                    {                        
+                        boxes[position].Image = Properties.Resources.hotspot;
+                        boxes[position].Image.Tag = "player";
+                    }
+                    position++;
+                }
+            }
+
+            foreach (var item in boxes)
+            {
+                
+            }
         }
 
-        private void testmethod(){
-        
-            for (int x = 0; x < 100; x++)
-			{
-                Console.WriteLine(x+" TAG "+boxes[x].Image.Tag);
 
-			}
-        
+        private void testmethod2() {
+            int position = 0;
+            Console.WriteLine("\n---\n");
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
+            {
+                Console.WriteLine("");
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
+                {
+                    Console.Write(Mapa.array[i, xx]);
+                    position++;
+                }
+            }        
+        }
+
+        private Boolean asignarPicturesBoxexAArray()
+        {
+            int position = 0;
+            int player = 0;
+            int block = 0;
+            int hotspot = 0;
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
+            {
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
+                {
+
+                    if (boxes[position].Image.Tag == null)
+                    {
+                        ClaseGlobal.ShowMessage("ERROR ");
+                    }
+                    else if (boxes[position].Image.Tag != null)
+                    {
+                        //Guarda en el array 2d el numero correspondiente al tile
+                        if (boxes[position].Image.Tag.Equals("isolatedtile"))
+                        {
+                            Mapa.array[i, xx] = 0;
+                        }
+                        else if (boxes[position].Image.Tag.Equals("player"))
+                        {
+                            Mapa.array[i, xx] = 1;
+                            player++;
+                        }
+                        else if (boxes[position].Image.Tag.Equals("terr"))
+                        {
+                            Mapa.array[i, xx] = 2;
+                        }
+                        else if (boxes[position].Image.Tag.Equals("block"))
+                        {
+                            Mapa.array[i, xx] = 3;
+                            block++;
+                        }
+                        else if (boxes[position].Image.Tag.Equals("hotspot"))
+                        {
+                            Mapa.array[i, xx] = 4;
+                            hotspot++;
+                        }
+
+                    }
+                    //update += array[i, xx];
+                    position++;
+                }
+            }
+
+            if (hotspot > 0 && block > 0 && hotspot == block && player == 1)
+	        {
+                Console.WriteLine("\n Map is valid");
+		        return true;
+	        }
+            else
+                Console.WriteLine("\n MAP is invalid , requires fixes");
+                return false;
+
         }
 
         //-PICTUREBOX EVENTS
@@ -107,8 +216,8 @@ namespace BoxGame
                 case 0:
                     ((PictureBox)sender).Image = Properties.Resources.isolatedtile;
                     ((PictureBox)sender).Image.Tag = "isolatedtile";
-                    Console.WriteLine("TAG "+((PictureBox)sender).Image.Tag);
-                    Console.WriteLine("TAG "+boxes[0].Image.Tag);
+                    //Console.WriteLine("TAG "+((PictureBox)sender).Image.Tag);
+                    //Console.WriteLine("TAG "+boxes[0].Image.Tag);
                     break;
                 case 1:
                     ((PictureBox)sender).Image = Properties.Resources.player;
@@ -134,8 +243,76 @@ namespace BoxGame
         private void button1_Click(object sender, EventArgs e)
         {
             //AnalizarPictureBoxes();
-            //addSidesAndCorners();
             testmethod();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            asignarPicturesBoxexAArray();
+            testmethod2();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (asignarPicturesBoxexAArray())
+            {                            
+                string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+                bool seguardo = false;
+                try
+                {
+                    using (Stream stream = File.Open(currentPath + "\\" + textBox1.Text, FileMode.Create))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+                        bin.Serialize(stream, Mapa);
+                    }
+                }
+                catch (IOException)
+                {
+                }
+                finally
+                {
+                    if (seguardo)
+                    {
+                        Console.WriteLine("Se guardo el objeto");
+                    }
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("ERRROR ERROR");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+                using (Stream stream = File.Open(currentPath + "\\" + textBox1.Text, FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    var recuperado = (Map)bin.Deserialize(stream);
+                    Mapa.array = recuperado.array;
+                }
+                Console.WriteLine("Se leyo correctamente el archivo Binario");
+                //PasarArrayAPictureBoxes();
+            }
+            catch (IOException)
+            {
+            }
+            finally {
+
+                Mapa.printArray();
+                PasarArrayAPictureBoxes();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Mapa.printArray();
+            PasarArrayAPictureBoxes();
         }
 
     }

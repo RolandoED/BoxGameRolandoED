@@ -7,3 +7,12 @@ c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\Til
 c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.pdb
 c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.exe
 c:\users\rolando\documents\visual studio 2013\Projects\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.pdb
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.exe.config
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.exe
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.pdb
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.exe
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\bin\Debug\TileGameSerialization.pdb
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.csprojResolveAssemblyReference.cache
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.Form1.resources
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.Properties.Resources.resources
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\TileGameSerialization\TileGameSerialization\obj\Debug\TileGameSerialization.csproj.GenerateResource.Cache
