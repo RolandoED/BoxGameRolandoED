@@ -122,7 +122,8 @@ namespace BoxGame
                     else if (Mapa.array[i, xx] == 4)
                     {                        
                         boxes[position].Image = Properties.Resources.hotspot;
-                        boxes[position].Image.Tag = "player";
+                        boxes[position].Image.Tag = "hotspot";
+                        //boxes[position].Image.Tag = "player";
                     }
                     position++;
                 }
@@ -160,11 +161,11 @@ namespace BoxGame
                 for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
 
-                    if (boxes[position].Image.Tag == null)
-                    {
-                        ClaseGlobal.ShowMessage("ERROR ");
-                    }
-                    else if (boxes[position].Image.Tag != null)
+                    //if (boxes[position].Image.Tag == null)
+                    //{
+                    //    ClaseGlobal.ShowMessage("ERROR ");
+                    //}
+                    if (boxes[position].Image.Tag != null)
                     {
                         //Guarda en el array 2d el numero correspondiente al tile
                         if (boxes[position].Image.Tag.Equals("isolatedtile"))
