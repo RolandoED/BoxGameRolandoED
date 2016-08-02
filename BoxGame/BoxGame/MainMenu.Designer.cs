@@ -28,62 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnNuevoJugador = new System.Windows.Forms.Button();
+            this.btnEditorNiveles = new System.Windows.Forms.Button();
+            this.btnJugar = new System.Windows.Forms.Button();
+            this.btnRankins = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnNuevoJugador
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(63, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(281, 107);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Nuevo Jugador";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNuevoJugador.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNuevoJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoJugador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNuevoJugador.Location = new System.Drawing.Point(63, 51);
+            this.btnNuevoJugador.Name = "btnNuevoJugador";
+            this.btnNuevoJugador.Size = new System.Drawing.Size(281, 107);
+            this.btnNuevoJugador.TabIndex = 0;
+            this.btnNuevoJugador.Text = "Nuevo Jugador";
+            this.btnNuevoJugador.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnEditorNiveles
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(63, 390);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(281, 107);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Editor De Niveles";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEditorNiveles.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnEditorNiveles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditorNiveles.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditorNiveles.Location = new System.Drawing.Point(63, 503);
+            this.btnEditorNiveles.Name = "btnEditorNiveles";
+            this.btnEditorNiveles.Size = new System.Drawing.Size(281, 107);
+            this.btnEditorNiveles.TabIndex = 1;
+            this.btnEditorNiveles.Text = "Editor De Niveles";
+            this.btnEditorNiveles.UseVisualStyleBackColor = false;
+            this.btnEditorNiveles.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnJugar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(63, 277);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(281, 107);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Jugar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnJugar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnJugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnJugar.Location = new System.Drawing.Point(63, 164);
+            this.btnJugar.Name = "btnJugar";
+            this.btnJugar.Size = new System.Drawing.Size(281, 107);
+            this.btnJugar.TabIndex = 2;
+            this.btnJugar.Text = "Jugar";
+            this.btnJugar.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnRankins
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(63, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(281, 107);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Ver Ranking";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnRankins.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRankins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRankins.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRankins.Location = new System.Drawing.Point(63, 277);
+            this.btnRankins.Name = "btnRankins";
+            this.btnRankins.Size = new System.Drawing.Size(281, 107);
+            this.btnRankins.TabIndex = 3;
+            this.btnRankins.Text = "Ver Ranking";
+            this.btnRankins.UseVisualStyleBackColor = false;
+            this.btnRankins.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSalir.Location = new System.Drawing.Point(63, 390);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(281, 107);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Guardar y Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BoxGame.Properties.Resources.title;
+            this.pictureBox2.Location = new System.Drawing.Point(450, 51);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(749, 129);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BoxGame.Properties.Resources.Animation;
-            this.pictureBox1.Location = new System.Drawing.Point(712, 84);
+            this.pictureBox1.Location = new System.Drawing.Point(646, 215);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(430, 323);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -92,15 +125,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 717);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.IsMdiContainer = true;
+            this.Controls.Add(this.btnRankins);
+            this.Controls.Add(this.btnJugar);
+            this.Controls.Add(this.btnEditorNiveles);
+            this.Controls.Add(this.btnNuevoJugador);
             this.Name = "MainMenu";
             this.Text = "Sokoban";
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -108,11 +143,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnNuevoJugador;
+        private System.Windows.Forms.Button btnEditorNiveles;
+        private System.Windows.Forms.Button btnJugar;
+        private System.Windows.Forms.Button btnRankins;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

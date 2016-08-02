@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//
+using System.IO;
+
 
 namespace BoxGame
 {
@@ -30,6 +33,27 @@ namespace BoxGame
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);                
+                //Si el archivo Is Admin existe, entra como administrador
+                if (File.Exists(currentPath + "\\isadmin.txt"))
+                {
+                    ClaseGlobal.IsAdmin = true;
+                    Console.WriteLine("The file exists.");
+                }
+                else
+                {
+                    btnEditorNiveles.Hide();
+                }
+                }
+            catch (IOException)
+            {
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
 
         }

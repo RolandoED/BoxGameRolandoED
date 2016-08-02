@@ -17,6 +17,7 @@ namespace BoxGame
         //listas
         //static List<Articulo> arrayArticulos = new List<Articulo>();
         //static List<Local> arrayLocales = new List<Local>();
+        public static Boolean IsAdmin = false;
 
         private static string gname = "";
         private static string glastname = "";
