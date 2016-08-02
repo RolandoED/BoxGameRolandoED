@@ -30,6 +30,7 @@ namespace BoxGame
         {
             int contador = 0;
             int cantidad = -1;
+            txtIntentosActuales.Text = ""+Mapa.MaxMovements;
             foreach (var pictureBox in Controls.OfType<PictureBox>())
             {                              
                 cantidad++;
@@ -249,8 +250,8 @@ namespace BoxGame
 
         private void button2_Click(object sender, EventArgs e)
         {
-            asignarPicturesBoxexAArray();
-            testmethod2();
+            //asignarPicturesBoxexAArray();
+            //testmethod2();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -261,14 +262,24 @@ namespace BoxGame
                 bool seguardo = false;
                 try
                 {
+                    if (!txtIntentos.Text.Equals(""))
+                    {
+                        Mapa.MaxMovements =  Int32.Parse(txtIntentos.Text);
+                        
+                    }
+                    else
+                    {
+                        Mapa.MaxMovements = 25;
+                    }
                     using (Stream stream = File.Open(currentPath + "\\" + textBox1.Text, FileMode.Create))
                     {
                         BinaryFormatter bin = new BinaryFormatter();
                         bin.Serialize(stream, Mapa);
                     }
                 }
-                catch (IOException)
+                catch (IOException ew)
                 {
+                    ClaseGlobal.ShowMessage(ew.Message);
                 }
                 finally
                 {
@@ -296,8 +307,10 @@ namespace BoxGame
 
                     var recuperado = (Map)bin.Deserialize(stream);
                     Mapa.array = recuperado.array;
+                    Mapa.MaxMovements = recuperado.MaxMovements;
                 }
                 Console.WriteLine("Se leyo correctamente el archivo Binario");
+                txtIntentosActuales.Text = "" + Mapa.MaxMovements;
                 //PasarArrayAPictureBoxes();
             }
             catch (IOException)
