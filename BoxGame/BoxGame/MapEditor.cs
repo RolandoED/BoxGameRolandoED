@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 //using System.Web.Script.Serialization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace BoxGame
 {
@@ -26,8 +27,21 @@ namespace BoxGame
             InitializeComponent();
         }
 
+        private void showAllFiles() 
+        {
+            string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+            string[] filePaths = Directory.GetFiles(currentPath+"\\maps\\");
+            string paths = "";
+            foreach (string item in filePaths)
+	        {
+                paths += "\n" + Path.GetFileName(item) + "\n\r";
+	        }
+            textBox2.Text = paths;
+        }
+
         private void MapEditor_Load(object sender, EventArgs e)
         {
+            showAllFiles();
             int contador = 0;
             int cantidad = -1;
             txtIntentosActuales.Text = ""+Mapa.MaxMovements;

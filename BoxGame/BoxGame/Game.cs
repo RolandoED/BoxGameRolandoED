@@ -92,20 +92,21 @@ namespace BoxGame
 
         private void Game_Load(object sender, EventArgs e)
         {
+            
             Console.WriteLine("");
-            int tamano = array.GetLength(1);
-            Console.WriteLine(array.GetLength(0));
-            MaxDer = array.GetLength(1) - 1;
-            Console.WriteLine(array.GetLength(1));
-            MaxIzq = array.GetLength(0) - 1;
+            int tamano = Mapa.array.GetLength(1);
+            Console.WriteLine(Mapa.array.GetLength(0));
+            MaxDer = Mapa.array.GetLength(1) - 1;
+            Console.WriteLine(Mapa.array.GetLength(1));
+            MaxIzq = Mapa.array.GetLength(0) - 1;
             Console.WriteLine("");
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
             {
                 //update += "\n";
-                for (int xx = 0; xx < array.GetLength(1); xx++)
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
-                    firstmap.array[i, xx] = array[i, xx];
+                    firstmap.array[i, xx] = Mapa.array[i, xx];
                     //update += array[i, xx];
                 }
             }
@@ -151,23 +152,23 @@ namespace BoxGame
             int x = 0;
             int y = 0;
             blocks.Clear();
-            for (int i = 0; i < array.GetLength(1); i++)
+            for (int i = 0; i < Mapa.array.GetLength(1); i++)
             {
-                for (int xc = 0; xc < array.GetLength(0); xc++)
+                for (int xc = 0; xc < Mapa.array.GetLength(0); xc++)
                 {
                     //salida +=
-                    if (array[xc, i] == 1)
+                    if (Mapa.array[xc, i] == 1)
                     {
                         x = xc;
                         y = i;
                     }
-                    else if (array[xc, i] == 4)
+                    else if (Mapa.array[xc, i] == 4)
                     {
                         Objective guardar = new Objective(i, xc);
                         objectives.Add(guardar);
-                        array[xc, i] = 2;
+                        Mapa.array[xc, i] = 2;
                     }
-                    else if (array[xc, i] == 3)
+                    else if (Mapa.array[xc, i] == 3)
                     {
                         Objective guardar = new Objective(i, xc);
                         blocks.Add(guardar);
@@ -207,33 +208,33 @@ namespace BoxGame
                 else if (Ypos + 1 != MaxDer)
                 {
                     // si el cuadro es tierra
-                    if (array[Xpos, (Ypos + 1)] == 2)
+                    if (Mapa.array[Xpos, (Ypos + 1)] == 2)
                     {
                         Console.WriteLine("Se mueve para Derecha");
                         WalkSound();
                         sentido = 3;
-                        array[Xpos, (Ypos + 1)] = 1;
-                        array[Xpos, (Ypos)] = 2;
+                        Mapa.array[Xpos, (Ypos + 1)] = 1;
+                        Mapa.array[Xpos, (Ypos)] = 2;
                         RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
-                    else if (array[Xpos, (Ypos + 1)] == 3 &&
-                             array[Xpos, (Ypos + 2)] == 0)
+                    else if (Mapa.array[Xpos, (Ypos + 1)] == 3 &&
+                             Mapa.array[Xpos, (Ypos + 2)] == 0)
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
                         RefrescaPosdeJugador();
                     }
-                    else if (array[Xpos, (Ypos + 1)] == 3 &&
-                             array[Xpos, (Ypos + 2)] == 2)
+                    else if (Mapa.array[Xpos, (Ypos + 1)] == 3 &&
+                             Mapa.array[Xpos, (Ypos + 2)] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
                         GurdarMapaRecuperacion();
                         sentido = 3;
-                        array[Xpos, (Ypos)] = 2;
-                        array[Xpos, (Ypos + 1)] = 1;
-                        array[Xpos, (Ypos + 2)] = 3;
+                        Mapa.array[Xpos, (Ypos)] = 2;
+                        Mapa.array[Xpos, (Ypos + 1)] = 1;
+                        Mapa.array[Xpos, (Ypos + 2)] = 3;
                         RefrescaPosdeJugador();
                     }
                 }
@@ -251,33 +252,33 @@ namespace BoxGame
                 else if (Ypos - 1 != 0)
                 {
                     // si el cuadro es tierra
-                    if (array[Xpos, (Ypos - 1)] == 2)
+                    if (Mapa.array[Xpos, (Ypos - 1)] == 2)
                     {
                         Console.WriteLine("Se mueve para Izq");
                         WalkSound();
                         sentido = 4;
-                        array[Xpos, (Ypos - 1)] = 1;
-                        array[Xpos, (Ypos)] = 2;
+                        Mapa.array[Xpos, (Ypos - 1)] = 1;
+                        Mapa.array[Xpos, (Ypos)] = 2;
                         RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
-                    else if (array[Xpos, (Ypos - 1)] == 3 &&
-                             array[Xpos, (Ypos - 2)] == 0)
+                    else if (Mapa.array[Xpos, (Ypos - 1)] == 3 &&
+                             Mapa.array[Xpos, (Ypos - 2)] == 0)
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
                         RefrescaPosdeJugador();
                     }
-                    else if (array[Xpos, (Ypos - 1)] == 3 &&
-                             array[Xpos, (Ypos - 2)] == 2)
+                    else if (Mapa.array[Xpos, (Ypos - 1)] == 3 &&
+                             Mapa.array[Xpos, (Ypos - 2)] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
                         GurdarMapaRecuperacion();
                         sentido = 4;
-                        array[Xpos, (Ypos)] = 2;
-                        array[Xpos, (Ypos - 1)] = 1;
-                        array[Xpos, (Ypos - 2)] = 3;
+                        Mapa.array[Xpos, (Ypos)] = 2;
+                        Mapa.array[Xpos, (Ypos - 1)] = 1;
+                        Mapa.array[Xpos, (Ypos - 2)] = 3;
                         RefrescaPosdeJugador();
                     }
                 }
@@ -295,33 +296,33 @@ namespace BoxGame
                 else if (Xpos - 1 != 0)
                 {
                     // si el cuadro es tierra
-                    if (array[(Xpos - 1), Ypos] == 2)
+                    if (Mapa.array[(Xpos - 1), Ypos] == 2)
                     {
                         Console.WriteLine("Se mueve para Arriba");
                         WalkSound();
                         sentido = 1;
-                        array[(Xpos - 1), Ypos] = 1;
-                        array[(Xpos), Ypos] = 2;
+                        Mapa.array[(Xpos - 1), Ypos] = 1;
+                        Mapa.array[(Xpos), Ypos] = 2;
                         RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
-                    else if (array[(Xpos - 1), Ypos] == 3 &&
-                             array[(Xpos - 2), Ypos] == 0)
+                    else if (Mapa.array[(Xpos - 1), Ypos] == 3 &&
+                             Mapa.array[(Xpos - 2), Ypos] == 0)
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
                         RefrescaPosdeJugador();
                     }
-                    else if (array[(Xpos - 1), Ypos] == 3 &&
-                             array[(Xpos - 2), Ypos] == 2)
+                    else if (Mapa.array[(Xpos - 1), Ypos] == 3 &&
+                             Mapa.array[(Xpos - 2), Ypos] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
                         GurdarMapaRecuperacion();
                         sentido = 1;
-                        array[(Xpos), Ypos] = 2;
-                        array[(Xpos - 1), Ypos] = 1;
-                        array[(Xpos - 2), Ypos] = 3;
+                        Mapa.array[(Xpos), Ypos] = 2;
+                        Mapa.array[(Xpos - 1), Ypos] = 1;
+                        Mapa.array[(Xpos - 2), Ypos] = 3;
                         RefrescaPosdeJugador();
                     }
                 }
@@ -340,33 +341,33 @@ namespace BoxGame
                 else if (Xpos + 1 != MaxIzq)
                 {
                     // si el cuadro es tierra
-                    if (array[(Xpos + 1), Ypos] == 2)
+                    if (Mapa.array[(Xpos + 1), Ypos] == 2)
                     {
                         Console.WriteLine("Se mueve para Arriba");
                         WalkSound();
                         sentido = 2;
-                        array[(Xpos + 1), Ypos] = 1;
-                        array[(Xpos), Ypos] = 2;
+                        Mapa.array[(Xpos + 1), Ypos] = 1;
+                        Mapa.array[(Xpos), Ypos] = 2;
                         RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
-                    else if (array[(Xpos + 1), Ypos] == 3 &&
-                             array[(Xpos + 2), Ypos] == 0)
+                    else if (Mapa.array[(Xpos + 1), Ypos] == 3 &&
+                             Mapa.array[(Xpos + 2), Ypos] == 0)
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
                         RefrescaPosdeJugador();
                     }
-                    else if (array[(Xpos + 1), Ypos] == 3 &&
-                             array[(Xpos + 2), Ypos] == 2)
+                    else if (Mapa.array[(Xpos + 1), Ypos] == 3 &&
+                             Mapa.array[(Xpos + 2), Ypos] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
                         GurdarMapaRecuperacion();
                         sentido = 2;
-                        array[(Xpos), Ypos] = 2;
-                        array[(Xpos + 1), Ypos] = 1;
-                        array[(Xpos + 2), Ypos] = 3;
+                        Mapa.array[(Xpos), Ypos] = 2;
+                        Mapa.array[(Xpos + 1), Ypos] = 1;
+                        Mapa.array[(Xpos + 2), Ypos] = 3;
                         RefrescaPosdeJugador();
                     }
                 }
@@ -383,12 +384,12 @@ namespace BoxGame
         {
             int cont = 0;
             Random rnd = new Random();
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
             {
                 Console.WriteLine("");
-                for (int xx = 0; xx < array.GetLength(1); xx++)
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
-                    if (array[i, xx] == 0)
+                    if (Mapa.array[i, xx] == 0)
                     {
                         if ((i == 0 && xx == 0) ||
                            (i == 0 && xx == MaxDer) ||
@@ -416,22 +417,22 @@ namespace BoxGame
                             cont++;
                         }
                     }
-                    else if (array[i, xx] == 2)
+                    else if (Mapa.array[i, xx] == 2)
                     {
                         boxes[cont].Image = Properties.Resources.terr;
                         cont++;
                     }
-                    else if (array[i, xx] == 3)
+                    else if (Mapa.array[i, xx] == 3)
                     {
                         boxes[cont].Image = Properties.Resources.block;
                         cont++;
                     }
-                    else if (array[i, xx] == 1)
+                    else if (Mapa.array[i, xx] == 1)
                     {
                         boxes[cont].Image = Properties.Resources.player;
                         cont++;
                     }
-                    Console.Write(array[i, xx]);
+                    Console.Write(Mapa.array[i, xx]);
                 }
             }
             cont = 0;
@@ -439,9 +440,9 @@ namespace BoxGame
             foreach (var item in objectives)
             {
                 Console.WriteLine("\nHOTSPOT X {0}, Y{1}", item.x, item.y);
-                for (int i = 0; i < array.GetLength(0); i++)
+                for (int i = 0; i < Mapa.array.GetLength(0); i++)
                 {
-                    for (int xx = 0; xx < array.GetLength(1); xx++)
+                    for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                     {
                         if (xx == Ypos && i == Xpos)
                         {
@@ -465,7 +466,7 @@ namespace BoxGame
                             Console.WriteLine("ENTRO");
                             cont++;
                         }
-                        else if (array[i, xx] == 3 && xx == item.x && i == item.y)
+                        else if (Mapa.array[i, xx] == 3 && xx == item.x && i == item.y)
                         {
                             boxes[cont].Image = Properties.Resources.block;
                             cont++;
@@ -491,11 +492,11 @@ namespace BoxGame
         /// </summary>
         private void GurdarMapaRecuperacion()
         {
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
             {
-                for (int xx = 0; xx < array.GetLength(1); xx++)
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
-                    recoverymap.array[i, xx] = array[i, xx];
+                    recoverymap.array[i, xx] = Mapa.array[i, xx];
                 }
             }
             objectivesrecovery.Clear();
@@ -518,8 +519,10 @@ namespace BoxGame
         private void AnalizarGane()
         {
             int cont = 0;
+            //por cada bloque
             foreach (var blk in blocks)
             {
+                //por cada objetivo
                 foreach (var obj in objectives)
                 {
                     if (blk.x == obj.x && blk.y == obj.y)
@@ -538,11 +541,11 @@ namespace BoxGame
         private void button1_Click(object sender, EventArgs e)
         {
             RestartSound();
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
             {
-                for (int xx = 0; xx < array.GetLength(1); xx++)
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
                 {
-                    array[i, xx] = newarray2[i, xx];
+                    Mapa.array[i, xx] = newarray2[i, xx];
                 }
             }
             objectives.Clear();
@@ -550,12 +553,87 @@ namespace BoxGame
             blocks.Clear();
             foreach (var item in blocks)
             {
-                array[item.y, item.x] = 3;
+                Mapa.array[item.y, item.x] = 3;
                 blocks.Add(item);
             }
             sentido = 2;
             RefrescaPosdeJugador();
             RefrescaTiles(); 
+        }
+
+        private void CargaMapadesdeArchivo(string mapname)
+        {
+            try
+            {
+                string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+                using (Stream stream = File.Open(currentPath + "\\maps\\" + mapname, FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    var recuperado = (Map)bin.Deserialize(stream);
+                    Mapa.array = recuperado.array;
+                    Mapa.MaxMovements = recuperado.MaxMovements;
+                    firstmap.array = recuperado.array;
+                }
+                Console.WriteLine("Se leyo correctamente el archivo Binario");
+                //txtIntentosActuales.Text = "" + Mapa.MaxMovements;
+            }
+            catch (IOException eexc)
+            {
+                ClaseGlobal.ShowMessage(eexc.Message);
+            }
+            finally
+            {
+                Mapa.printArray();
+                PasarArrayAPictureBoxes();
+            }
+        }
+
+         /// <summary>
+        /// Pasa el Array Lógico de la clase a los picture boxes
+        /// </summary>
+        private void PasarArrayAPictureBoxes()
+        {
+            int position = 0;
+            for (int i = 0; i < Mapa.array.GetLength(0); i++)
+            {
+                for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)
+                {
+                    if (Mapa.array[i, xx] == 0)
+                    {
+                        boxes[position].Image = Properties.Resources.isolatedtile;
+                        boxes[position].Image.Tag = "isolatedtile";
+                    }
+                    else if (Mapa.array[i, xx] == 1)
+                    {
+                        boxes[position].Image = Properties.Resources.player;
+                        boxes[position].Image.Tag = "player";
+                    }
+                    else if (Mapa.array[i, xx] == 2)
+                    {
+                        boxes[position].Image = Properties.Resources.terr;
+                        boxes[position].Image.Tag = "terr";
+                    }
+                    else if (Mapa.array[i, xx] == 3)
+                    {
+                        boxes[position].Image = Properties.Resources.block;
+                        boxes[position].Image.Tag = "block";
+                    }
+                    else if (Mapa.array[i, xx] == 4)
+                    {
+                        boxes[position].Image = Properties.Resources.hotspot;
+                        boxes[position].Image.Tag = "hotspot";
+                        //boxes[position].Image.Tag = "player";
+                    }                   
+                    position++;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CargaMapadesdeArchivo(textBox1.Text);
+            objectives.Clear();
         }
 
     }
