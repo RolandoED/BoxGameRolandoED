@@ -101,6 +101,15 @@ namespace TileGameRolandoed.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream bump {
+            get {
+                return ResourceManager.GetStream("bump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap corner {
@@ -137,6 +146,15 @@ namespace TileGameRolandoed.Properties {
             get {
                 object obj = ResourceManager.GetObject("isolatedtile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream kick {
+            get {
+                return ResourceManager.GetStream("kick", resourceCulture);
             }
         }
         
@@ -181,12 +199,30 @@ namespace TileGameRolandoed.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream restart {
+            get {
+                return ResourceManager.GetStream("restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap terr {
             get {
                 object obj = ResourceManager.GetObject("terr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream walk {
+            get {
+                return ResourceManager.GetStream("walk", resourceCulture);
             }
         }
     }

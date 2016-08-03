@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+//
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Media;
 
-namespace TileGameRolandoed
+namespace BoxGame
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
+        public Map Mapa = new Map();
+
         private int Xpos;
         private int Ypos;
         private int oldXpos;
@@ -33,21 +37,21 @@ namespace TileGameRolandoed
         List<Objective> blocksrecovery = new List<Objective>();
         public bool istherearecovery = false;
 
+        public PictureBox[] boxes = new PictureBox[100];
 
-
-        int[,] newarray = new int[,]
-	    {
-	    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	    {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-	    {0, 0, 2, 1, 2, 3, 3, 0, 2, 0},
-	    {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-	    {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-	    {0, 2, 2, 3, 2, 4, 4, 2, 2, 0},
-	    {0, 2, 2, 2, 4, 2, 2, 0, 2, 0},    	      
-        {0, 2, 2, 2, 2, 2, 2, 0, 2, 0},    	                      	             	      	     	   
-        {0, 2, 2, 2, 2, 2, 2, 0, 2, 0},    	                      	             	      	     	   
- 	    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	    };
+        int[,] array = new int[,]
+        {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 2, 2, 0, 2, 2, 2, 2, 2, 0},
+        {0, 0, 4, 1, 2, 3, 3, 0, 2, 0},
+        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
+        {0, 2, 4, 2, 2, 2, 2, 2, 2, 0},
+        {0, 2, 2, 3, 0, 2, 4, 2, 2, 0},
+        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
+        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
+        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        };
 
         int[,] newarray2 = new int[,]
         {
@@ -58,36 +62,22 @@ namespace TileGameRolandoed
         {0, 2, 4, 2, 2, 2, 2, 2, 2, 0},
         {0, 2, 2, 3, 2, 2, 4, 2, 2, 0},
         {0, 2, 2, 2, 2, 2, 2, 0, 2, 0},    	                      	             
-        {0, 2, 2, 2, 2, 2, 2, 0, 2, 0},    	             
-        {0, 0, 2, 0, 2, 0, 2, 0, 2, 0},    	             
+        {0, 2, 2, 2, 2, 2, 2, 0, 2, 0},
+        {0, 0, 2, 0, 2, 0, 2, 0, 2, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         };
 
-        int[,] array = new int[,]
+        public Game()
         {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 2, 2, 0, 2, 2, 2, 2, 2, 0},
-        {0, 0, 4, 1, 2, 3, 3, 0, 2, 0},
-        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        {0, 2, 4, 2, 2, 2, 2, 2, 2, 0},
-        {0, 2, 2, 3, 0, 2, 4, 2, 2, 0},
-        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},    	         	          	        	         	          	      
-        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},    	         	          	        	         	          	      
-        {0, 2, 2, 2, 2, 2, 2, 2, 2, 0},    	         	          	        	         	          	      
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        };
-        public PictureBox[] boxes = new PictureBox[100];
-
-        public Form1()
-        {
+            Mapa.array = array;
             InitializeComponent();
             int contador = 0;
             int cantidad = -1;
             foreach (var pictureBox in Controls.OfType<PictureBox>())
-            {                              
+            {
                 cantidad++;
             }
-            //se popula alrevez para que no quede del ultimo al primero
+            // Se popula alrevez para que no quede del ultimo al primero
             contador = cantidad;
             foreach (var pictureBox in Controls.OfType<PictureBox>())
             {
@@ -100,8 +90,7 @@ namespace TileGameRolandoed
             //boxes[34] = pictureBox35;
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void Game_Load(object sender, EventArgs e)
         {
             Console.WriteLine("");
             int tamano = array.GetLength(1);
@@ -124,11 +113,13 @@ namespace TileGameRolandoed
             Console.WriteLine("CHECKING FIRST MAP");
             firstmap.printArray();
             //label1.Text = update;
-            RefreshPlayerposition();
-            refreshtiles();
+            RefrescaPosdeJugador();
+            RefrescaTiles();
         }
 
-        public void KickSound() {
+
+        public void KickSound()
+        {
             Stream str = Properties.Resources.kick;
             SoundPlayer simpleSound = new SoundPlayer(str);
             simpleSound.Play();
@@ -155,10 +146,55 @@ namespace TileGameRolandoed
             simpleSound.Play();
         }
 
+        private void RefrescaPosdeJugador()
+        {
+            int x = 0;
+            int y = 0;
+            blocks.Clear();
+            for (int i = 0; i < array.GetLength(1); i++)
+            {
+                for (int xc = 0; xc < array.GetLength(0); xc++)
+                {
+                    //salida +=
+                    if (array[xc, i] == 1)
+                    {
+                        x = xc;
+                        y = i;
+                    }
+                    else if (array[xc, i] == 4)
+                    {
+                        Objective guardar = new Objective(i, xc);
+                        objectives.Add(guardar);
+                        array[xc, i] = 2;
+                    }
+                    else if (array[xc, i] == 3)
+                    {
+                        Objective guardar = new Objective(i, xc);
+                        blocks.Add(guardar);
+                    }
+                }
+            }
+            Console.WriteLine("BLOCKS : " + blocks.Count);
+            Console.WriteLine("OBJECTIVES : " + objectives.Count);
+            if (blocks.Count != objectives.Count)
+            {
+                MessageBox.Show("ERROR NO HAY LA MISMA CANTIDAD DE BLOQUES Y OBJETIVOS");
+            }
+            Xpos = x;
+            Ypos = y;
+            //array[x, y] = 5;        
+        }
 
+        /// <summary>
+        /// Método que procesa la entrada de teclado arriba abajo izquierda y derecha
+        /// Y depende de la entrada modifica el mapa
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns>bool</returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            RefreshPlayerposition();
+            RefrescaPosdeJugador();
             //Si se mueve hacia la derecha
             if (keyData == Keys.Right)
             {
@@ -171,14 +207,14 @@ namespace TileGameRolandoed
                 else if (Ypos + 1 != MaxDer)
                 {
                     // si el cuadro es tierra
-                    if (array[Xpos, (Ypos +1)] == 2)
+                    if (array[Xpos, (Ypos + 1)] == 2)
                     {
                         Console.WriteLine("Se mueve para Derecha");
                         WalkSound();
                         sentido = 3;
-                        array[Xpos, (Ypos +1)] = 1;
+                        array[Xpos, (Ypos + 1)] = 1;
                         array[Xpos, (Ypos)] = 2;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
                     else if (array[Xpos, (Ypos + 1)] == 3 &&
@@ -186,22 +222,22 @@ namespace TileGameRolandoed
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
-                        RefreshPlayerposition();                      
+                        RefrescaPosdeJugador();
                     }
                     else if (array[Xpos, (Ypos + 1)] == 3 &&
                              array[Xpos, (Ypos + 2)] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        saveRecoveryMap();
+                        GurdarMapaRecuperacion();
                         sentido = 3;
                         array[Xpos, (Ypos)] = 2;
                         array[Xpos, (Ypos + 1)] = 1;
                         array[Xpos, (Ypos + 2)] = 3;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                 }
-                refreshtiles();
+                RefrescaTiles();
                 return true;
             }
             else if (keyData == Keys.Left)
@@ -222,7 +258,7 @@ namespace TileGameRolandoed
                         sentido = 4;
                         array[Xpos, (Ypos - 1)] = 1;
                         array[Xpos, (Ypos)] = 2;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
                     else if (array[Xpos, (Ypos - 1)] == 3 &&
@@ -230,22 +266,22 @@ namespace TileGameRolandoed
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                     else if (array[Xpos, (Ypos - 1)] == 3 &&
                              array[Xpos, (Ypos - 2)] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        saveRecoveryMap();
+                        GurdarMapaRecuperacion();
                         sentido = 4;
                         array[Xpos, (Ypos)] = 2;
                         array[Xpos, (Ypos - 1)] = 1;
                         array[Xpos, (Ypos - 2)] = 3;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                 }
-                refreshtiles();
+                RefrescaTiles();
                 return true;
             }
             else if (keyData == Keys.Up)
@@ -264,9 +300,9 @@ namespace TileGameRolandoed
                         Console.WriteLine("Se mueve para Arriba");
                         WalkSound();
                         sentido = 1;
-                        array[(Xpos- 1), Ypos ] = 1;
+                        array[(Xpos - 1), Ypos] = 1;
                         array[(Xpos), Ypos] = 2;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
                     else if (array[(Xpos - 1), Ypos] == 3 &&
@@ -274,23 +310,23 @@ namespace TileGameRolandoed
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
-                    else if (array[(Xpos- 1), Ypos ] == 3 &&
+                    else if (array[(Xpos - 1), Ypos] == 3 &&
                              array[(Xpos - 2), Ypos] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        saveRecoveryMap();
+                        GurdarMapaRecuperacion();
                         sentido = 1;
                         array[(Xpos), Ypos] = 2;
                         array[(Xpos - 1), Ypos] = 1;
                         array[(Xpos - 2), Ypos] = 3;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                 }
 
-                refreshtiles();                
+                RefrescaTiles();
                 return true;
             }
             else if (keyData == Keys.Down)
@@ -311,7 +347,7 @@ namespace TileGameRolandoed
                         sentido = 2;
                         array[(Xpos + 1), Ypos] = 1;
                         array[(Xpos), Ypos] = 2;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                     // si el cuadro es un bloque
                     else if (array[(Xpos + 1), Ypos] == 3 &&
@@ -319,114 +355,31 @@ namespace TileGameRolandoed
                     {
                         Console.WriteLine("No se mueve");
                         BumpSound();
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                     else if (array[(Xpos + 1), Ypos] == 3 &&
                              array[(Xpos + 2), Ypos] == 2)
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        saveRecoveryMap();
+                        GurdarMapaRecuperacion();
                         sentido = 2;
                         array[(Xpos), Ypos] = 2;
                         array[(Xpos + 1), Ypos] = 1;
                         array[(Xpos + 2), Ypos] = 3;
-                        RefreshPlayerposition();
+                        RefrescaPosdeJugador();
                     }
                 }
-                refreshtiles();
+                RefrescaTiles();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void printarray() {
-            int x = 0;
-            int y = 0;
-            Console.WriteLine("");
-            for (int i = 0; i < array.GetLength(0) ; i++)
-            {
-                for (int xc = 0; xc < array.GetLength(1); xc++)
-                {
-                    if (array[i, xc] == 1)
-                    {
-                        y = xc;
-                        x = i;
-                    }
-                    Console.Write(array[i, xc] + " ");
-                }
-                Console.Write("\n");
-            }
-            Xpos = x;
-            Ypos = y;
-        }
-
-        private void RefreshPlayerposition()
-        {
-            int x = 0;
-            int y = 0;
-            blocks.Clear();
-            for (int i = 0; i < array.GetLength(1); i++)
-            {
-                for (int xc = 0; xc < array.GetLength(0); xc++)
-                {
-                    //salida +=
-                    if (array[xc, i] == 1)
-                    {
-                        x = xc;
-                        y = i;
-                    }                            
-                    else if (array[xc, i] == 4)
-                    {
-                        Objective guardar = new Objective(i, xc);
-                        objectives.Add(guardar);
-                        array[xc, i] = 2;
-                    }
-                    else if (array[xc, i] == 3)
-                    {
-                        Objective guardar = new Objective(i, xc);
-                        blocks.Add(guardar);
-                    }
-                }
-            }
-            Console.WriteLine("BLOCKS : "+ blocks.Count);
-            Console.WriteLine("OBJECTIVES : " + objectives.Count);
-            if (blocks.Count != objectives.Count)
-            {
-                MessageBox.Show("ERROR NO HAY LA MISMA CANTIDAD DE BLOQUES Y OBJETIVOS");
-            }
-            Xpos = x;
-            Ypos = y;
-            //array[x, y] = 5;        
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            refreshtiles();
-            printarray();
-        }
-
-        private void ANALIZARGANE() {
-            int cont = 0;
-            foreach (var blk in blocks)
-            {
-                foreach (var obj in objectives)
-                {
-                    if (blk.x == obj.x && blk.y == obj.y)
-                    {
-                        cont++;
-                    }
-                    
-                }
-            }
-            if (cont == blocks.Count && cont == objectives.Count)
-            {
-                MessageBox.Show("GANO!!!");
-            }
-        
-        }
-
-        private void refreshtiles()
+        /// <summary>
+        /// Refresca los Picture Boxes / Tiles acorde con el array
+        /// </summary>
+        private void RefrescaTiles()
         {
             int cont = 0;
             Random rnd = new Random();
@@ -437,15 +390,15 @@ namespace TileGameRolandoed
                 {
                     if (array[i, xx] == 0)
                     {
-                        if ((i == 0 && xx == 0) || 
+                        if ((i == 0 && xx == 0) ||
                            (i == 0 && xx == MaxDer) ||
-                           (i == MaxIzq && xx == MaxDer)||
+                           (i == MaxIzq && xx == MaxDer) ||
                            (i == MaxIzq && xx == 0))
                         {
                             boxes[cont].Image = Properties.Resources.corner;
                             cont++;
                         }
-                        else if ((i != 0 && xx == 0)||
+                        else if ((i != 0 && xx == 0) ||
                                  (i != 0 && xx == MaxDer))
                         {
                             boxes[cont].Image = Properties.Resources.bdhoriz;
@@ -458,7 +411,7 @@ namespace TileGameRolandoed
                             cont++;
                         }
                         else
-                        { 
+                        {
                             boxes[cont].Image = Properties.Resources.isolatedtile;
                             cont++;
                         }
@@ -485,9 +438,9 @@ namespace TileGameRolandoed
             //rellenar hotspots
             foreach (var item in objectives)
             {
-                Console.WriteLine("\nHOTSPOT X {0}, Y{1}",item.x,item.y);
+                Console.WriteLine("\nHOTSPOT X {0}, Y{1}", item.x, item.y);
                 for (int i = 0; i < array.GetLength(0); i++)
-                {                    
+                {
                     for (int xx = 0; xx < array.GetLength(1); xx++)
                     {
                         if (xx == Ypos && i == Xpos)
@@ -508,19 +461,19 @@ namespace TileGameRolandoed
                             {
                                 boxes[cont].Image = Properties.Resources.playerleft;
                             }
-                           //boxes[cont].Image = Properties.Resources.player;
+                            //boxes[cont].Image = Properties.Resources.player;
                             Console.WriteLine("ENTRO");
                             cont++;
                         }
                         else if (array[i, xx] == 3 && xx == item.x && i == item.y)
-                        {                           
+                        {
                             boxes[cont].Image = Properties.Resources.block;
                             cont++;
                         }
                         else if (xx == item.x && i == item.y)
-                        {                         
-                           boxes[cont].Image = Properties.Resources.hotspot;
-                           cont++;
+                        {
+                            boxes[cont].Image = Properties.Resources.hotspot;
+                            cont++;
                         }
                         else
                         {
@@ -530,9 +483,14 @@ namespace TileGameRolandoed
                 }
                 cont = 0;
             }
-            ANALIZARGANE();
-         }
-        private void saveRecoveryMap() {
+            AnalizarGane();
+        }
+
+        /// <summary>
+        /// Guarda el Mapa de recuperacion en memoria
+        /// </summary>
+        private void GurdarMapaRecuperacion()
+        {
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int xx = 0; xx < array.GetLength(1); xx++)
@@ -557,79 +515,27 @@ namespace TileGameRolandoed
             istherearecovery = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AnalizarGane()
         {
-            RestartSound();
-            for (int i = 0; i < array.GetLength(0); i++)
-            {               
-                for (int xx = 0; xx < array.GetLength(1); xx++)
-                {
-                    array[i, xx] = firstmap.array[i, xx];                                       
-                }            
-            }
-            foreach (var item in objectives)
+            int cont = 0;
+            foreach (var blk in blocks)
             {
-                array[item.y, item.x] = 4; 
-            }
-            objectives.Clear();
-            blocksrecovery.Clear();
-            blocks.Clear();
-            sentido = 2;
-            RefreshPlayerposition();
-            refreshtiles();            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (istherearecovery)
-            {
-                for (int i = 0; i < array.GetLength(0); i++)
+                foreach (var obj in objectives)
                 {
-                    for (int xx = 0; xx < array.GetLength(1); xx++)
-                    {                           
-                        array[i, xx] = recoverymap.array[i, xx];
+                    if (blk.x == obj.x && blk.y == obj.y)
+                    {
+                        cont++;
                     }
+
                 }
-                Xpos = oldXpos;
-                Ypos = oldYpos;
-                //objectives.Clear();
-                blocks.Clear();
-                foreach (var item in blocks)
-                {
-                    array[item.y, item.x] = 3;
-                    blocks.Add(item);
-                }
-                blocksrecovery.Clear();
-                sentido = 2;
-                RefreshPlayerposition();
-                refreshtiles();                   
+            }
+            if (cont == blocks.Count && cont == objectives.Count)
+            {
+                MessageBox.Show("GANO!!!");
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            RestartSound();
-            for (int i = 0; i < array.GetLength(0); i++)
-            {
-                for (int xx = 0; xx < array.GetLength(1); xx++)
-                {
-                    array[i, xx] = newarray[i, xx];
-                }
-            }
-            objectives.Clear();
-            blocksrecovery.Clear();
-            blocks.Clear();
-            foreach (var item in blocks)
-            {
-                array[item.y, item.x] = 3;
-                blocks.Add(item);
-            }
-            sentido = 2;
-            RefreshPlayerposition();
-            refreshtiles(); 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             RestartSound();
             for (int i = 0; i < array.GetLength(0); i++)
@@ -648,8 +554,8 @@ namespace TileGameRolandoed
                 blocks.Add(item);
             }
             sentido = 2;
-            RefreshPlayerposition();
-            refreshtiles(); 
+            RefrescaPosdeJugador();
+            RefrescaTiles(); 
         }
 
     }

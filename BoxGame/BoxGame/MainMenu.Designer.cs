@@ -75,6 +75,7 @@
             this.btnJugar.TabIndex = 2;
             this.btnJugar.Text = "Jugar";
             this.btnJugar.UseVisualStyleBackColor = false;
+            this.btnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
             // btnRankins
             // 

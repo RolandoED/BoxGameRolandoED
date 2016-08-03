@@ -54,6 +54,11 @@
     <Compile Include="Objective.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,14 +69,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
@@ -94,13 +94,7 @@
     <None Include="Resources\bd.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hotspot - copia.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\terr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\terr2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hotspot.png" />
@@ -133,19 +127,19 @@
     <None Include="Resources\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hotspot1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\block1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\terr21.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\player1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\EMPTY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bump.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kick.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\walk.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

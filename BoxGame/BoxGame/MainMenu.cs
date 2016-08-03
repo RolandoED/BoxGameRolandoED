@@ -57,5 +57,11 @@ namespace BoxGame
         {            
             this.Close();
         }
+
+        private void btnJugar_Click(object sender, EventArgs e)
+        {
+            Game frmJuego = new Game();
+            frmJuego.Show();
+        }
     }
 }
