@@ -41,7 +41,7 @@
             this.txtRank = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosJugadores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +56,14 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(152, 42);
+            this.txtID.Location = new System.Drawing.Point(231, 38);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(131, 20);
             this.txtID.TabIndex = 1;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(152, 85);
+            this.txtName.Location = new System.Drawing.Point(231, 81);
             this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(131, 20);
@@ -71,7 +71,7 @@
             // 
             // txtNickName
             // 
-            this.txtNickName.Location = new System.Drawing.Point(152, 128);
+            this.txtNickName.Location = new System.Drawing.Point(231, 124);
             this.txtNickName.MaxLength = 10;
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.Size = new System.Drawing.Size(131, 20);
@@ -79,7 +79,7 @@
             // 
             // txtMaxscore
             // 
-            this.txtMaxscore.Location = new System.Drawing.Point(152, 167);
+            this.txtMaxscore.Location = new System.Drawing.Point(231, 163);
             this.txtMaxscore.Name = "txtMaxscore";
             this.txtMaxscore.Size = new System.Drawing.Size(70, 20);
             this.txtMaxscore.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(152, 23);
+            this.lbl1.Location = new System.Drawing.Point(231, 19);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(19, 17);
             this.lbl1.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(152, 65);
+            this.lbl2.Location = new System.Drawing.Point(231, 61);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(58, 17);
             this.lbl2.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(152, 108);
+            this.lbl3.Location = new System.Drawing.Point(231, 104);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(70, 17);
             this.lbl3.TabIndex = 7;
@@ -118,7 +118,7 @@
             // 
             this.lbl4.AutoSize = true;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(152, 147);
+            this.lbl4.Location = new System.Drawing.Point(231, 143);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(70, 17);
             this.lbl4.TabIndex = 8;
@@ -128,7 +128,7 @@
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(152, 185);
+            this.lbl5.Location = new System.Drawing.Point(231, 181);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(41, 17);
             this.lbl5.TabIndex = 10;
@@ -136,7 +136,7 @@
             // 
             // txtRank
             // 
-            this.txtRank.Location = new System.Drawing.Point(152, 205);
+            this.txtRank.Location = new System.Drawing.Point(231, 201);
             this.txtRank.Name = "txtRank";
             this.txtRank.Size = new System.Drawing.Size(70, 20);
             this.txtRank.TabIndex = 9;
@@ -145,7 +145,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(417, 38);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(105, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
@@ -161,21 +161,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnActualizar
             // 
-            this.button3.Location = new System.Drawing.Point(417, 98);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Actualizar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnActualizar.Location = new System.Drawing.Point(417, 98);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(105, 23);
+            this.btnActualizar.TabIndex = 13;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;            
             // 
             // CRUDUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 461);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl5);
@@ -213,6 +213,6 @@
         private System.Windows.Forms.TextBox txtRank;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

@@ -65,13 +65,12 @@ namespace BoxGame
         private void btnJugar_Click(object sender, EventArgs e)
         {
             if (ClaseGlobal._UsuarioActual == null)
-            {
-                
-            bool resul;
-            string message = "";
-            var result = MessageBox.Show("Desea Jugar sin Registrarse ?\nNo se Guardará su puntaje", "Aviso",
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
+            {                
+                bool resul;
+                string message = "";
+                var result = MessageBox.Show("Desea Jugar sin Registrarse ?\nNo se Guardará su puntaje", "Aviso",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -97,8 +96,12 @@ namespace BoxGame
                     //                     MessageBoxButtons.OK,
                     //                     MessageBoxIcon.Question);
                 }
+            }
+        else
+        {
+            Game frmJuego = new Game();
+            frmJuego.Show();
         }
-
         }
 
         private void btnCRUDUsuarios_Click(object sender, EventArgs e)

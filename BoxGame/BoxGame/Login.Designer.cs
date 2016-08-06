@@ -38,19 +38,20 @@
             // 
             // btnLoguear
             // 
-            this.btnLoguear.Location = new System.Drawing.Point(242, 227);
+            this.btnLoguear.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLoguear.Location = new System.Drawing.Point(162, 229);
             this.btnLoguear.Name = "btnLoguear";
-            this.btnLoguear.Size = new System.Drawing.Size(276, 23);
+            this.btnLoguear.Size = new System.Drawing.Size(276, 67);
             this.btnLoguear.TabIndex = 0;
             this.btnLoguear.Text = "Loguear";
-            this.btnLoguear.UseVisualStyleBackColor = true;
+            this.btnLoguear.UseVisualStyleBackColor = false;
             this.btnLoguear.Click += new System.EventHandler(this.btnLoguear_Click);
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(244, 67);
+            this.lbl1.Location = new System.Drawing.Point(164, 69);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(137, 20);
             this.lbl1.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(244, 124);
+            this.lbl2.Location = new System.Drawing.Point(164, 126);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(79, 20);
             this.lbl2.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(244, 92);
+            this.txtNombre.Location = new System.Drawing.Point(164, 94);
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(273, 20);
@@ -77,7 +78,7 @@
             // 
             // txtNickName
             // 
-            this.txtNickName.Location = new System.Drawing.Point(244, 147);
+            this.txtNickName.Location = new System.Drawing.Point(164, 149);
             this.txtNickName.MaxLength = 10;
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.Size = new System.Drawing.Size(273, 20);
@@ -88,7 +89,7 @@
             // 
             this.ckbxRegistered.AutoSize = true;
             this.ckbxRegistered.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbxRegistered.Location = new System.Drawing.Point(256, 185);
+            this.ckbxRegistered.Location = new System.Drawing.Point(176, 187);
             this.ckbxRegistered.Name = "ckbxRegistered";
             this.ckbxRegistered.Size = new System.Drawing.Size(248, 24);
             this.ckbxRegistered.TabIndex = 5;
@@ -99,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 519);
+            this.ClientSize = new System.Drawing.Size(602, 431);
             this.Controls.Add(this.ckbxRegistered);
             this.Controls.Add(this.txtNickName);
             this.Controls.Add(this.txtNombre);
@@ -107,7 +108,7 @@
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnLoguear);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Autenticacion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

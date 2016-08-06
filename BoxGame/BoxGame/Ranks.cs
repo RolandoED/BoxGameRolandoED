@@ -20,9 +20,9 @@ namespace BoxGame
         public Ranks()
         {
             InitializeComponent();
-            listView1.Columns.Add("Nombre");
-            listView1.Columns.Add("NivelActual");
-            listView1.Columns.Add("Puntuacion");
+            listView1.Columns.Add("NICK");
+            listView1.Columns.Add("MAXSCORE");
+            listView1.Columns.Add("RANK");
             listView1.View = View.Details;
         }
 
@@ -34,10 +34,7 @@ namespace BoxGame
                 "Integrated Security=True;";
             DataTable dt = new DataTable();
             ///Seleccionar todo desde Jugador donde la puntuacion sea mayor
-            ////SELECT * FROM JUGADOR ORDER BY Puntuacion DESC
-            //SELECT TOP number|percent column_name(s)
-            //FROM table_name;
-            sqlquery = "SELECT TOP 20 *  FROM JUGADOR ORDER BY Puntuacion DESC;";
+            sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY  RANK;";
             SqlConnection sqlconn = new SqlConnection(conexion);
             sqlconn.Open();
             SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);
@@ -49,9 +46,9 @@ namespace BoxGame
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
-                ListViewItem listitem = new ListViewItem(dr["NombreJugador"].ToString());
-                listitem.SubItems.Add(dr["Nivel"].ToString());
-                listitem.SubItems.Add(dr["Puntuacion"].ToString());
+                ListViewItem listitem = new ListViewItem(dr["NICK"].ToString());
+                listitem.SubItems.Add(dr["MAXSCORE"].ToString());
+                listitem.SubItems.Add(dr["RANK"].ToString());
                 //listitem.SubItems.Add(dr["fk_int_Company_ID"].ToString());
                 listView1.Items.Add(listitem);
             }
