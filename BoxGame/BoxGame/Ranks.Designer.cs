@@ -35,7 +35,7 @@
             // listView1
             // 
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(737, 134);
+            this.listView1.Location = new System.Drawing.Point(597, 117);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(478, 281);
             this.listView1.TabIndex = 3;
@@ -48,7 +48,7 @@
             this.lblRanks.AutoSize = true;
             this.lblRanks.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblRanks.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRanks.Location = new System.Drawing.Point(893, 110);
+            this.lblRanks.Location = new System.Drawing.Point(753, 93);
             this.lblRanks.Name = "lblRanks";
             this.lblRanks.Size = new System.Drawing.Size(150, 21);
             this.lblRanks.TabIndex = 4;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 633);
+            this.ClientSize = new System.Drawing.Size(1119, 439);
             this.Controls.Add(this.lblRanks);
             this.Controls.Add(this.listView1);
             this.Name = "Ranks";

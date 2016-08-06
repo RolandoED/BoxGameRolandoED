@@ -35,7 +35,9 @@ namespace BoxGame
             DataTable dt = new DataTable();
             ///Seleccionar todo desde Jugador donde la puntuacion sea mayor
             ////SELECT * FROM JUGADOR ORDER BY Puntuacion DESC
-            sqlquery = "SELECT * FROM JUGADOR ORDER BY Puntuacion DESC;";
+            //SELECT TOP number|percent column_name(s)
+            //FROM table_name;
+            sqlquery = "SELECT TOP 20 *  FROM JUGADOR ORDER BY Puntuacion DESC;";
             SqlConnection sqlconn = new SqlConnection(conexion);
             sqlconn.Open();
             SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);

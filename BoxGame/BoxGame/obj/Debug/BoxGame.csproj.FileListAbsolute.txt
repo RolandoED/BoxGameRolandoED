@@ -21,3 +21,5 @@ C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\BoxGame\BoxGame\o
 C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.Ranks.resources
 C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.csproj.GenerateResource.Cache
 C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.Game.resources
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.CRUDUsuario.resources
+C:\Users\Rolando\Documents\Visual Studio 2013\Projects\BoxGame\BoxGame\BoxGame\obj\Debug\BoxGame.Login.resources

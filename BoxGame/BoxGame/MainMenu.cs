@@ -49,6 +49,7 @@ namespace BoxGame
                 else
                 {
                     btnEditorNiveles.Hide();
+                    btnCRUDUsuarios.Hide();
                 }
                 }
             catch (IOException)
@@ -63,8 +64,53 @@ namespace BoxGame
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            Game frmJuego = new Game();
-            frmJuego.Show();
+            if (ClaseGlobal._UsuarioActual == null)
+            {
+                
+            bool resul;
+            string message = "";
+            var result = MessageBox.Show("Desea Jugar sin Registrarse ?\nNo se Guardará su puntaje", "Aviso",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    Game frmJuego = new Game();
+                    frmJuego.Show();
+                    //if (textBox1.Text != "")
+                    //{
+                    //    person1.Id = Convert.ToInt16(textBox1.Text);
+                    //}
+                    //person1.Name = textBox2.Text;
+                    //person1.LastName = textBox3.Text;
+
+                    //resul = person1.NewData(person1);
+                    //if (resul == true)
+                    //{
+                    //    message = "Información guardada";
+                    //}
+                    //else
+                    //{
+                    //    message = "No se guardó la información, los registros están llenos";
+                    //}
+                    //result = MessageBox.Show(message, "Aviso",
+                    //                     MessageBoxButtons.OK,
+                    //                     MessageBoxIcon.Question);
+                }
+        }
+
+        }
+
+        private void btnCRUDUsuarios_Click(object sender, EventArgs e)
+        {
+            CRUDUsuario crudUser = new CRUDUsuario();
+            crudUser.Show();
+        }
+
+        private void btnNuevoJugador_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
         }
     }
 }

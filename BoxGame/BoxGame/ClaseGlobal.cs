@@ -12,7 +12,7 @@ namespace BoxGame
     class ClaseGlobal
     {
         //public static UsuarioGuardado _UsuarioActualGuardado;
-        //public static Usuario _UsuarioActual;
+        public static Usuario _UsuarioActual;
 
         public static int CantMaps = 0;
 
@@ -60,6 +60,10 @@ namespace BoxGame
             sw.Close();
         }
 
+        /// <summary>
+        /// Cuenta cuantos Mapas existen en la carpeta maps
+        /// </summary>
+        /// <returns>int</returns>
         public static int AnalizarCuantosMapasHay()
         {
             try

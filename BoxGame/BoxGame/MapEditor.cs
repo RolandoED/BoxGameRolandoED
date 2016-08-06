@@ -278,17 +278,7 @@ namespace BoxGame
             //MessageBox.Show("clicked on: " + ((PictureBox)sender).Name);            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //AnalizarPictureBoxes();
-            testmethod();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //asignarPicturesBoxexAArray();
-            //testmethod2();
-        }
 
 
         /// <summary>
@@ -367,11 +357,28 @@ namespace BoxGame
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Debug Methods to visualize what is logially happening behind the GUI
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnDebug2_Click(object sender, EventArgs e)
+        {
+            asignarPicturesBoxexAArray();
+            testmethod2();
+        }
+
+        private void btnDebug1_Click(object sender, EventArgs e)
+        {        
+            //AnalizarPictureBoxes();
+            testmethod();
+        }
+
+        private void btnDebug3_Click(object sender, EventArgs e)
         {
             Mapa.printArray();
             PasarArrayAPictureBoxes();
         }
-
     }
 }

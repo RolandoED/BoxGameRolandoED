@@ -173,7 +173,8 @@ namespace BoxGame
         }
 
         private void mostrarmovimientos() {
-            lblMovs.Text = moviemientos.ToString();        
+            lblMovs.Text = moviemientos.ToString();
+            lblNivel.Text = "Nivel # " + currentMap;
         }
 
         private void RefrescaPosdeJugador()
