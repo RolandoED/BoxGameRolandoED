@@ -44,7 +44,7 @@
             this.btnNuevoJugador.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnNuevoJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoJugador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNuevoJugador.Location = new System.Drawing.Point(63, 51);
+            this.btnNuevoJugador.Location = new System.Drawing.Point(12, 22);
             this.btnNuevoJugador.Name = "btnNuevoJugador";
             this.btnNuevoJugador.Size = new System.Drawing.Size(281, 107);
             this.btnNuevoJugador.TabIndex = 0;
@@ -56,7 +56,7 @@
             this.btnEditorNiveles.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnEditorNiveles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditorNiveles.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEditorNiveles.Location = new System.Drawing.Point(63, 503);
+            this.btnEditorNiveles.Location = new System.Drawing.Point(12, 474);
             this.btnEditorNiveles.Name = "btnEditorNiveles";
             this.btnEditorNiveles.Size = new System.Drawing.Size(281, 107);
             this.btnEditorNiveles.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.btnJugar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnJugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJugar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnJugar.Location = new System.Drawing.Point(63, 164);
+            this.btnJugar.Location = new System.Drawing.Point(12, 135);
             this.btnJugar.Name = "btnJugar";
             this.btnJugar.Size = new System.Drawing.Size(281, 107);
             this.btnJugar.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.btnRankins.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnRankins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRankins.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRankins.Location = new System.Drawing.Point(63, 277);
+            this.btnRankins.Location = new System.Drawing.Point(12, 248);
             this.btnRankins.Name = "btnRankins";
             this.btnRankins.Size = new System.Drawing.Size(281, 107);
             this.btnRankins.TabIndex = 3;
@@ -95,7 +95,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalir.Location = new System.Drawing.Point(63, 390);
+            this.btnSalir.Location = new System.Drawing.Point(12, 361);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(281, 107);
             this.btnSalir.TabIndex = 6;
@@ -106,16 +106,16 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::BoxGame.Properties.Resources.title;
-            this.pictureBox2.Location = new System.Drawing.Point(450, 51);
+            this.pictureBox2.Location = new System.Drawing.Point(309, 22);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(749, 129);
+            this.pictureBox2.Size = new System.Drawing.Size(75, 25);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BoxGame.Properties.Resources.Animation;
-            this.pictureBox1.Location = new System.Drawing.Point(646, 215);
+            this.pictureBox1.Location = new System.Drawing.Point(459, 145);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(430, 323);
             this.pictureBox1.TabIndex = 4;
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1309, 717);
+            this.ClientSize = new System.Drawing.Size(1089, 598);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox1);

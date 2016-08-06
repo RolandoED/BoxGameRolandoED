@@ -532,6 +532,7 @@ namespace TileGameRolandoed
             }
             ANALIZARGANE();
          }
+
         private void saveRecoveryMap() {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -594,11 +595,11 @@ namespace TileGameRolandoed
                 Ypos = oldYpos;
                 //objectives.Clear();
                 blocks.Clear();
-                foreach (var item in blocks)
-                {
-                    array[item.y, item.x] = 3;
-                    blocks.Add(item);
-                }
+                //foreach (var item in blocks)
+                //{
+                //    array[item.y, item.x] = 3;
+                //    blocks.Add(item);
+                //}
                 blocksrecovery.Clear();
                 sentido = 2;
                 RefreshPlayerposition();

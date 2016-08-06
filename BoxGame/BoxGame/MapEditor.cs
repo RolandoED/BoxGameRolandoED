@@ -39,8 +39,28 @@ namespace BoxGame
             textBox2.Text = paths;
         }
 
+        /// <summary>
+        /// Si la carpeta maps no existe la crea
+        /// </summary>
+        private void ExisteCarpetaMaps() {
+            try
+            {
+                string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+                string path = currentPath + "\\maps";
+                if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+            }
+            catch (Exception e)
+            {
+                ClaseGlobal.ShowMessage(" " + e.Message);                
+            }
+        }
+
         private void MapEditor_Load(object sender, EventArgs e)
         {
+            ExisteCarpetaMaps();
             showAllFiles();
             int contador = 0;
             int cantidad = -1;

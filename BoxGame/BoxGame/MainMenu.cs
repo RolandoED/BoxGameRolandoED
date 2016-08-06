@@ -32,12 +32,15 @@ namespace BoxGame
             editor.Show();
         }
 
+
+
         private void MainMenu_Load(object sender, EventArgs e)
         {
             try
             {
                 string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);                
                 //Si el archivo Is Admin existe, entra como administrador
+                //AnalizarCuantosMapasHay();
                 if (File.Exists(currentPath + "\\isadmin.txt"))
                 {
                     ClaseGlobal.IsAdmin = true;
