@@ -58,18 +58,24 @@ namespace BoxGame
                         Console.WriteLine("clas glob" + ClaseGlobal._UsuarioActual.NICK);
                         Console.WriteLine("clas glob" + ClaseGlobal._UsuarioActual.MAXSCORE);
                         Console.WriteLine("clas glob" + ClaseGlobal._UsuarioActual.RANK);
-                        ClaseGlobal.ShowText("Usuario Encontrado");
+                        ClaseGlobal.ShowText("Usuario Encontrado: " +
+                            "\nName: " + ClaseGlobal._UsuarioActual.NAME+
+                            "\nNick: " + ClaseGlobal._UsuarioActual.NICK+
+                            "\nMax level: " + ClaseGlobal._UsuarioActual.MAXSCORE+
+                            "\nRank: " + ClaseGlobal._UsuarioActual.RANK
+                            );
+                        this.Close();
                     }
                     else
                     {
-                        ClaseGlobal.ShowMessage("No se encontró el USUARIO");
+                        ClaseGlobal.ShowMessage("No se encontró el Usuario");
                     }
                 }
                 catch (SqlException ex)
                 {
                     if (ex.Number == 2627)
                     {
-                        ClaseGlobal.ShowMessage("Ya existe un Empleado con el NOMBRE ");
+                        ClaseGlobal.ShowMessage("Ya existe un Usuario con el mismo NOMBRE ");
                     }
                     Console.WriteLine(ex.GetType());
                     Console.WriteLine(ex.Data);

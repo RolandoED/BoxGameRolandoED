@@ -71,7 +71,7 @@ namespace BoxGame
         {
             maximumMap = ClaseGlobal.AnalizarCuantosMapasHay();
 
-            if (ClaseGlobal._UsuarioActual.MAXSCORE != null)
+            if (ClaseGlobal._UsuarioActual != null)
             {
                 if (ClaseGlobal._UsuarioActual.MAXSCORE == 0)                
                 {
@@ -122,16 +122,6 @@ namespace BoxGame
             //label1.Text = update;
             RefrescaPosdeJugador();
             RefrescaTiles();
-
-
-            //DESDE ARCHIVO
-            //CargaMapadesdeArchivo(textBox1.Text);
-            //objectives.Clear();
-            //recoverymap.array = Mapa.array;
-            //istherearecovery = false;
-            //RefrescaPosdeJugador();
-            //RefrescaTiles();
-
         }
 
 
@@ -655,11 +645,6 @@ namespace BoxGame
                 Ypos = oldYpos;
                 //objectives.Clear();
                 blocks.Clear();
-                //foreach (var item in blocks)
-                //{
-                //    Mapa.array[item.y, item.x] = 3;
-                //    blocks.Add(item);
-                //}
                 blocksrecovery.Clear();
                 sentido = 2;
                 RefrescaPosdeJugador();
@@ -772,23 +757,6 @@ namespace BoxGame
         private void button3_Click(object sender, EventArgs e)
         {
             RestartSound();
-            //for (int i = 0; i < Mapa.array.GetLength(0); i++)
-            //{
-            //    for (int xx = 0; xx <  Mapa.array.GetLength(1); xx++)
-            //    {
-            //         Mapa.array[i, xx] = firstmap.array[i, xx];
-            //    }
-            //}
-            //foreach (var item in objectives)
-            //{
-            //    Mapa.array[item.y, item.x] = 4;
-            //}
-            //objectives.Clear();
-            //blocksrecovery.Clear();
-            //blocks.Clear();
-            //sentido = 2;
-            //RefrescaPosdeJugador();
-            //RefrescaTiles();
 
             CargaMapadesdeArchivo("map" + currentMap);
             objectives.Clear();

@@ -131,9 +131,6 @@
     <None Include="Resources\Animation.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bgdark.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\isolatedtile.png" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +183,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\titlesmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerleft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerright.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\block.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotspot.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoMakr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgbright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgdark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goomba.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

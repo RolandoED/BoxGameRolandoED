@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLoguear = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             // btnLoguear
             // 
             this.btnLoguear.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLoguear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoguear.Location = new System.Drawing.Point(162, 229);
             this.btnLoguear.Name = "btnLoguear";
             this.btnLoguear.Size = new System.Drawing.Size(276, 67);
@@ -50,6 +52,7 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.Location = new System.Drawing.Point(164, 69);
             this.lbl1.Name = "lbl1";
@@ -60,6 +63,7 @@
             // lbl2
             // 
             this.lbl2.AutoSize = true;
+            this.lbl2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.Location = new System.Drawing.Point(164, 126);
             this.lbl2.Name = "lbl2";
@@ -69,19 +73,21 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(164, 94);
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(273, 20);
+            this.txtNombre.Size = new System.Drawing.Size(273, 23);
             this.txtNombre.TabIndex = 3;
             this.txtNombre.Text = "Rolando2";
             // 
             // txtNickName
             // 
+            this.txtNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNickName.Location = new System.Drawing.Point(164, 149);
             this.txtNickName.MaxLength = 10;
             this.txtNickName.Name = "txtNickName";
-            this.txtNickName.Size = new System.Drawing.Size(273, 20);
+            this.txtNickName.Size = new System.Drawing.Size(273, 23);
             this.txtNickName.TabIndex = 4;
             this.txtNickName.Text = "Rol1";
             // 
@@ -101,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BoxGame.Properties.Resources.bgbright;
             this.ClientSize = new System.Drawing.Size(602, 431);
             this.Controls.Add(this.ckbxRegistered);
             this.Controls.Add(this.txtNickName);
@@ -108,6 +115,7 @@
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnLoguear);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Autenticacion";
             this.ResumeLayout(false);

@@ -92,25 +92,25 @@ namespace BoxGame
                 if (CheckAllFieldsExceptID() == true)
                 {
                     string conexion = "Data Source=(local); " +
-                    "Initial Catalog=Sokoban;" +
-                    "Integrated Security=True;";
+                        "Initial Catalog=Sokoban;" +
+                        "Integrated Security=True;";
                     string sqlquery;
-                    //'User ID=UserName;Password=Password;
                     SqlConnection sqlconn = new SqlConnection(conexion);
                     sqlconn.Open();
                     SqlCommand sqlcomm = new SqlCommand();
                     DataTable dt = new DataTable();
-                    sqlquery = "insert into Player  values (" +                        
-                        "'" + txtName.Text + "'," +
-                        "'" + txtNickName.Text + "'," +
-                        " " + txtMaxscore.Text + " ," +
-                        " " + txtRank.Text + " );";
+                    sqlquery =
+                    "UPDATE Player " +
+                    "SET MAXSCORE = " + ClaseGlobal._UsuarioActual.MAXSCORE + ", " +
+                    " RANK = " + ClaseGlobal._UsuarioActual.RANK + "  " +
+                    " WHERE Nick =  '" + ClaseGlobal._UsuarioActual.NICK + "' ;"
+                    ;
+
                     sqlcomm.Connection = sqlconn;
                     sqlcomm.CommandText = sqlquery;
                     sqlcomm.CommandType = CommandType.Text;
                     sqlcomm.ExecuteNonQuery();
                     sqlconn.Close();
-
 
                     FillDataGridView();
                 }
@@ -181,6 +181,59 @@ namespace BoxGame
                 Console.WriteLine("numbere" + ex.Number);
             }
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtID.Text.Length > 0 && CheckAllFields())
+                {
+                    string conexion =
+                    "Data Source=(local);" +
+                    "Initial Catalog=Sokoban;" +
+                    "Integrated Security=True;";
+                    string sqlquery;
+                    SqlConnection sqlconn = new SqlConnection(conexion);
+                    sqlconn.Open();
+                    SqlCommand sqlcomm = new SqlCommand();
+                    DataTable dt = new DataTable();
+
+                    sqlquery =
+                    "UPDATE Player " +
+                    "SET NAME = '" + txtName.Text + "', " +
+                    " NICK = '" + txtNickName.Text + "', " +
+                    " MAXSCORE = " + txtMaxscore.Text + ", " +
+                    " RANK = " + txtRank.Text + " " +
+                    " WHERE ID = " + txtID.Text + ";";
+
+                    Console.WriteLine("sql: "+sqlquery);
+                    sqlcomm.Connection = sqlconn;
+                    sqlcomm.CommandText = sqlquery;
+                    sqlcomm.CommandType = CommandType.Text;
+                    sqlcomm.ExecuteNonQuery();
+                    sqlconn.Close();
+
+                    FillDataGridView();
+                }
+                else
+                    ClaseGlobal.ShowText("No se tiene ID para elminar el usuario");
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    ClaseGlobal.ShowMessage("Ya existe un Jugador con el Nick " + txtNickName.Text);
+                }
+                else
+                {
+                    ClaseGlobal.ShowMessage("El formato de los Numeros Es Incorrecto");
+                }
+                Console.WriteLine(ex.GetType());
+                Console.WriteLine(ex.Data);
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("numbere" + ex.Number);
+            }
         }
 
 

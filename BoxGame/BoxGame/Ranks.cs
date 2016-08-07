@@ -34,7 +34,7 @@ namespace BoxGame
                 "Integrated Security=True;";
             DataTable dt = new DataTable();
             ///Seleccionar todo desde Jugador donde la puntuacion sea mayor
-            sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY  RANK;";
+            sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY  RANK DESC;";
             SqlConnection sqlconn = new SqlConnection(conexion);
             sqlconn.Open();
             SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);

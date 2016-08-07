@@ -93,6 +93,16 @@ namespace BoxGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgbright {
+            get {
+                object obj = ResourceManager.GetObject("bgbright", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bgdark {
             get {
                 object obj = ResourceManager.GetObject("bgdark", resourceCulture);
@@ -130,6 +140,16 @@ namespace BoxGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon goomba {
+            get {
+                object obj = ResourceManager.GetObject("goomba", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap hotspot {
@@ -155,6 +175,16 @@ namespace BoxGame.Properties {
         internal static System.IO.UnmanagedMemoryStream kick {
             get {
                 return ResourceManager.GetStream("kick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoMakr {
+            get {
+                object obj = ResourceManager.GetObject("LogoMakr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
