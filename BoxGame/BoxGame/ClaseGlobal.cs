@@ -18,20 +18,20 @@ namespace BoxGame
 
         public static Boolean IsAdmin = false;
 
-        private static string gname = "";
-        private static string glastname = "";
+        //private static string gname = "";
+        //private static string glastname = "";
 
-        public static string Gname
-        {
-            get { return gname; }
-            set { gname = value; }
-        }
+        //public static string Gname
+        //{
+        //    get { return gname; }
+        //    set { gname = value; }
+        //}
 
-        public static string Glastname
-        {
-            get { return glastname; }
-            set { glastname = value; }
-        }
+        //public static string Glastname
+        //{
+        //    get { return glastname; }
+        //    set { glastname = value; }
+        //}
 
 
         public static void ShowMessage(string s)

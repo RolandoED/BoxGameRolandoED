@@ -47,8 +47,8 @@ namespace BoxGame
                         Console.WriteLine(dbr.GetInt64(3).ToString());
                         Console.WriteLine(dbr.GetInt64(4).ToString());
                         ClaseGlobal._UsuarioActual = UsuarioEncontrado;
-                        ClaseGlobal._UsuarioActual.NICK = (dbr.GetString(1));
-                        ClaseGlobal._UsuarioActual.NAME = (dbr.GetString(2));
+                        ClaseGlobal._UsuarioActual.NAME = (dbr.GetString(1));
+                        ClaseGlobal._UsuarioActual.NICK = (dbr.GetString(2));
                         ClaseGlobal._UsuarioActual.MAXSCORE = (dbr.GetInt64(3));
                         ClaseGlobal._UsuarioActual.RANK = (dbr.GetInt64(4));
                     }
@@ -131,6 +131,17 @@ namespace BoxGame
             }
             else
                 return false;        
+        }
+
+        private void ckbxRegistered_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbxRegistered.Checked)
+            {
+                txtNombre.Text = string.Empty;
+                txtNombre.Enabled = false;
+            }
+            else
+                txtNombre.Enabled = true;
         }
     }
 }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 
 namespace BoxGame
@@ -58,7 +61,34 @@ namespace BoxGame
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
-        {            
+        {
+            if (ClaseGlobal._UsuarioActual != null)
+            {
+                Console.WriteLine("Guardando Info del usuario");
+                string conexion = "Data Source=(local); " +
+                    "Initial Catalog=Sokoban;" +
+                    "Integrated Security=True;";
+                string sqlquery;
+                SqlConnection sqlconn = new SqlConnection(conexion);
+                sqlconn.Open();
+                SqlCommand sqlcomm = new SqlCommand();
+
+                DataTable dt = new DataTable();
+
+                sqlquery =
+                "UPDATE Player " +
+                "SET MAXSCORE = "+ClaseGlobal._UsuarioActual.MAXSCORE+", " +
+                " RANK = " + ClaseGlobal._UsuarioActual.RANK + "  " +
+                " WHERE Nick =  '" + ClaseGlobal._UsuarioActual.NICK + "' ;"
+                ;
+                Console.WriteLine("query "+sqlquery);
+
+                sqlcomm.Connection = sqlconn;
+                sqlcomm.CommandText = sqlquery;
+                sqlcomm.CommandType = CommandType.Text;
+                sqlcomm.ExecuteNonQuery();
+                sqlconn.Close();
+            }
             this.Close();
         }
 

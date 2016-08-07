@@ -107,17 +107,17 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::BoxGame.Properties.Resources.title;
-            this.pictureBox2.Location = new System.Drawing.Point(324, 22);
+            this.pictureBox2.Image = global::BoxGame.Properties.Resources.titlesmall;
+            this.pictureBox2.Location = new System.Drawing.Point(418, 33);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(742, 139);
+            this.pictureBox2.Size = new System.Drawing.Size(536, 111);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BoxGame.Properties.Resources.Animation;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 178);
+            this.pictureBox1.Location = new System.Drawing.Point(472, 150);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(430, 323);
             this.pictureBox1.TabIndex = 4;
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 516);
+            this.ClientSize = new System.Drawing.Size(1148, 505);
             this.Controls.Add(this.btnCRUDUsuarios);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnSalir);

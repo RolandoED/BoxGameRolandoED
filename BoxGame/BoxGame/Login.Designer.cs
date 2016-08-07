@@ -95,6 +95,7 @@
             this.ckbxRegistered.TabIndex = 5;
             this.ckbxRegistered.Text = "Ya estoy registrado, loguearme";
             this.ckbxRegistered.UseVisualStyleBackColor = true;
+            this.ckbxRegistered.CheckedChanged += new System.EventHandler(this.ckbxRegistered_CheckedChanged);
             // 
             // Login
             // 

@@ -19,7 +19,7 @@ namespace BoxGame
         public Map Mapa = new Map();
         public int currentMap = 0;
         public int maximumMap = 6;
-        public int moviemientos = 0;
+        public int movimientos = 0;
         public int moviemientosbackup = 0;
 
         private int Xpos;
@@ -43,34 +43,6 @@ namespace BoxGame
 
         public PictureBox[] boxes = new PictureBox[100];
 
-        //int[,] array = new int[,]
-        //{
-        //{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        //{0, 2, 2, 0, 2, 2, 2, 2, 2, 0},
-        //{0, 0, 4, 1, 2, 3, 3, 0, 2, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 2, 4, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 2, 2, 3, 0, 2, 4, 2, 2, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        //};
-
-        //int[,] newarray2 = new int[,]
-        //{
-        //{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 0, 4, 1, 2, 3, 3, 0, 2, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 2, 4, 2, 2, 2, 2, 2, 2, 0},
-        //{0, 2, 2, 3, 2, 2, 4, 2, 2, 0},
-        //{0, 2, 2, 2, 2, 2, 2, 0, 2, 0},    	                      	             
-        //{0, 2, 2, 2, 2, 2, 2, 0, 2, 0},
-        //{0, 0, 2, 0, 2, 0, 2, 0, 2, 0},
-        //{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        //};
-
         public Game()
         {
             currentMap++;
@@ -89,7 +61,7 @@ namespace BoxGame
                 boxes[contador] = pictureBox;
                 contador--;
             }
-            Console.WriteLine("");
+            Console.WriteLine("");            
             //boxes[0] = pictureBox1;
             // - - - -
             //boxes[34] = pictureBox35;
@@ -97,11 +69,30 @@ namespace BoxGame
 
         private void Game_Load(object sender, EventArgs e)
         {
-            
-            CargaMapadesdeArchivo("map"+currentMap);
-
             maximumMap = ClaseGlobal.AnalizarCuantosMapasHay();
 
+            if (ClaseGlobal._UsuarioActual.MAXSCORE != null)
+            {
+                if (ClaseGlobal._UsuarioActual.MAXSCORE == 0)                
+                {
+                    ClaseGlobal._UsuarioActual.MAXSCORE = 1;
+                    currentMap = 1;
+                }
+                else if(ClaseGlobal._UsuarioActual.MAXSCORE > maximumMap)
+                {
+                    ClaseGlobal._UsuarioActual.MAXSCORE = 1;
+                    currentMap = 1;
+                }
+                else
+                {
+                    currentMap =  (int)(ClaseGlobal._UsuarioActual.MAXSCORE); 
+                }
+                CargaMapadesdeArchivo("map" + ClaseGlobal._UsuarioActual.MAXSCORE);                
+            }
+            else {
+                currentMap = 1;
+                CargaMapadesdeArchivo("map" + currentMap);
+            }
 
             objectives.Clear();
             //recoverymap.array = Mapa.array;
@@ -173,8 +164,26 @@ namespace BoxGame
         }
 
         private void mostrarmovimientos() {
-            lblMovs.Text = moviemientos.ToString();
+            lblMovs.Text = movimientos.ToString();
             lblNivel.Text = "Nivel # " + currentMap;
+            int doblemovs = Mapa.MaxMovements * 2;
+            if (movimientos <= Mapa.MaxMovements)
+            {
+                btnStar1.Show();
+                btnStar2.Show();
+                btnStar3.Show();
+            }
+            else if (movimientos > Mapa.MaxMovements && movimientos <= doblemovs)
+            {
+                btnStar1.Show();
+                btnStar2.Show();
+                btnStar3.Hide();
+            }
+            else {
+                btnStar1.Show();
+                btnStar2.Hide();
+                btnStar3.Hide();
+            }
         }
 
         private void RefrescaPosdeJugador()
@@ -247,7 +256,7 @@ namespace BoxGame
                         Mapa.array[Xpos, (Ypos)] = 2;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                     // si el cuadro es un bloque
                     else if (Mapa.array[Xpos, (Ypos + 1)] == 3 &&
@@ -269,7 +278,7 @@ namespace BoxGame
                         Mapa.array[Xpos, (Ypos + 2)] = 3;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                 }
                 RefrescaTiles();
@@ -295,7 +304,7 @@ namespace BoxGame
                         Mapa.array[Xpos, (Ypos)] = 2;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                     // si el cuadro es un bloque
                     else if (Mapa.array[Xpos, (Ypos - 1)] == 3 &&
@@ -317,7 +326,7 @@ namespace BoxGame
                         Mapa.array[Xpos, (Ypos - 2)] = 3;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                 }
                 RefrescaTiles();
@@ -343,7 +352,7 @@ namespace BoxGame
                         Mapa.array[(Xpos), Ypos] = 2;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                     // si el cuadro es un bloque
                     else if (Mapa.array[(Xpos - 1), Ypos] == 3 &&
@@ -365,7 +374,7 @@ namespace BoxGame
                         Mapa.array[(Xpos - 2), Ypos] = 3;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                 }
 
@@ -392,7 +401,7 @@ namespace BoxGame
                         Mapa.array[(Xpos), Ypos] = 2;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                     // si el cuadro es un bloque
                     else if (Mapa.array[(Xpos + 1), Ypos] == 3 &&
@@ -414,7 +423,7 @@ namespace BoxGame
                         Mapa.array[(Xpos + 2), Ypos] = 3;
                         RefrescaPosdeJugador();
                         //Aumenta Moviemientos
-                        moviemientos++;
+                        movimientos++;
                     }
                 }
                 RefrescaTiles();
@@ -549,7 +558,7 @@ namespace BoxGame
             objectivesrecovery.Clear();
             blocksrecovery.Clear();
 
-            moviemientosbackup = moviemientos;
+            moviemientosbackup = movimientos;
             //oldXpos = Xpos;
             //oldYpos = Ypos;
 
@@ -581,9 +590,31 @@ namespace BoxGame
                 }
             }
             if (cont == blocks.Count && cont == objectives.Count)
-            {
+            {                
+                mostrarmovimientos();
+
+                Console.WriteLine("star 1 " + btnStar1.Visible);
+                Console.WriteLine("star 2 " + btnStar2.Visible);
+                Console.WriteLine("star 3 " + btnStar3.Visible);
+                if (ClaseGlobal._UsuarioActual != null)
+                {                    
+                    if (btnStar3.Visible)
+                    {
+                        ClaseGlobal._UsuarioActual.RANK += 25;
+                    }
+                    else if (btnStar2.Visible && !btnStar3.Visible)
+                    {
+                        ClaseGlobal._UsuarioActual.RANK += 10;
+                    }
+                    else
+                        ClaseGlobal._UsuarioActual.RANK += 5;
+                Console.WriteLine("RANK : "+ ClaseGlobal._UsuarioActual.RANK);
+                }
+
+                
+
                 MessageBox.Show("Ganó el nivel "+ (currentMap) +"!!!");
-                if ((currentMap+1)<maximumMap)
+                if ((currentMap+1) < maximumMap)
                 {
                     currentMap++;
                     CargaMapadesdeArchivo("map" + currentMap);
@@ -594,7 +625,11 @@ namespace BoxGame
                     sentido = 2;
                     RefrescaPosdeJugador();
                     //Reinicia Moviemientos
-                    moviemientos = 0;
+                    movimientos = 0;
+                    if (ClaseGlobal._UsuarioActual != null)
+                    {                        
+                        ClaseGlobal._UsuarioActual.MAXSCORE = currentMap;
+                    }
                     RefrescaTiles();
                 }
                 else
@@ -628,7 +663,7 @@ namespace BoxGame
                 blocksrecovery.Clear();
                 sentido = 2;
                 RefrescaPosdeJugador();
-                moviemientos = moviemientosbackup;
+                movimientos = moviemientosbackup;
                 RefrescaTiles();
             }
         }
@@ -755,7 +790,6 @@ namespace BoxGame
             //RefrescaPosdeJugador();
             //RefrescaTiles();
 
-
             CargaMapadesdeArchivo("map" + currentMap);
             objectives.Clear();
             //recoverymap.array = Mapa.array;
@@ -764,7 +798,7 @@ namespace BoxGame
             sentido = 2;
             RefrescaPosdeJugador();
             //Reinicia Moviemientos
-            moviemientos = 0;
+            movimientos = 0;
             RefrescaTiles();
         }
 
