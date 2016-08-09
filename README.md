@@ -4,6 +4,9 @@
  Sokoban-BoxGame
 </p>
 
+<p align="center"; font-size: 16px; font-weight: bold>
+![Game Logo](https://raw.githubusercontent.com/RolandoED/BoxGameRolandoED/master/BoxGame/BoxGame/Resources/LogoMakr.png)
+</p>
 
 [URL de Presentacion](https://rolandoed.github.io/Press/#/ "URL of Explanation")
 
