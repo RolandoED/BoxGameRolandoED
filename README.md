@@ -4,6 +4,6 @@
  Sokoban-BoxGame
 </p>
 
-<div align="center"; font-size: 16px; font-weight: bold>
- [Sokoban-BoxGame](https://rolandoed.github.io/Press/#/ "URL of Explanation")
-</div>
+
+ ##[URL to Presentation](https://rolandoed.github.io/Press/#/ "URL of Explanation")
+
