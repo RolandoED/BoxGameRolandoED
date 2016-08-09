@@ -108,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BoxGame.Properties.Resources.bgbright;
-            this.ClientSize = new System.Drawing.Size(602, 431);
+            this.ClientSize = new System.Drawing.Size(581, 431);
             this.Controls.Add(this.ckbxRegistered);
             this.Controls.Add(this.txtNickName);
             this.Controls.Add(this.txtNombre);
