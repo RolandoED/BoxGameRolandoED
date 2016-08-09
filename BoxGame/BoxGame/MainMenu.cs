@@ -96,8 +96,8 @@ namespace BoxGame
         {
             if (ClaseGlobal._UsuarioActual == null)
             {                
-                bool resul;
-                string message = "";
+                //bool resul;
+                //string message = "";
                 var result = MessageBox.Show("Desea Jugar sin Registrarse ?\nNo se Guardará su puntaje", "Aviso",
                                      MessageBoxButtons.YesNo,
                                      MessageBoxIcon.Question);

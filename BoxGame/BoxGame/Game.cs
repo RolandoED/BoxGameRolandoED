@@ -24,8 +24,8 @@ namespace BoxGame
 
         private int Xpos;
         private int Ypos;
-        private int oldXpos;
-        private int oldYpos;
+        private int oldXpos = 0;
+        private int oldYpos = 0;
         private int MaxDer = 9;
         private int MaxIzq = 9;
         //Sentido en que se mueve el personaje
@@ -586,6 +586,12 @@ namespace BoxGame
                 Console.WriteLine("star 1 " + btnStar1.Visible);
                 Console.WriteLine("star 2 " + btnStar2.Visible);
                 Console.WriteLine("star 3 " + btnStar3.Visible);
+                
+                //Seleccion dependiendo de las estrellas obtenidas
+                ///// Si Obtuvo :
+                ///// 3 estrellas  25
+                ///// 2 estrellas  10
+                ///// 1 estrellas  5
                 if (ClaseGlobal._UsuarioActual != null)
                 {                    
                     if (btnStar3.Visible)
@@ -604,7 +610,8 @@ namespace BoxGame
                 
 
                 MessageBox.Show("Ganó el nivel "+ (currentMap) +"!!!");
-                if ((currentMap+1) < maximumMap)
+                /////Si gana el nivel y se puede avanzar por que existen más mapas
+                if ((currentMap + 1) < maximumMap)
                 {
                     currentMap++;
                     CargaMapadesdeArchivo("map" + currentMap);
@@ -617,14 +624,38 @@ namespace BoxGame
                     //Reinicia Moviemientos
                     movimientos = 0;
                     if (ClaseGlobal._UsuarioActual != null)
-                    {                        
+                    {
                         ClaseGlobal._UsuarioActual.MAXSCORE = currentMap;
                     }
                     RefrescaTiles();
                 }
                 else
                 {
+                    var result = MessageBox.Show("Ha alcanzado el Nivel Final del Juego "+
+                        "\nDesea Volver a comenzar los mapas desde el primero?", "Aviso",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
 
+                    if (result == DialogResult.Yes)
+                    {
+                        currentMap = 1;
+                        CargaMapadesdeArchivo("map" + currentMap);
+                        objectives.Clear();
+                        //recoverymap.array = Mapa.array;
+                        firstmap.array = Mapa.array;
+                        istherearecovery = false;
+                        sentido = 2;
+                        RefrescaPosdeJugador();
+                        //Reinicia Moviemientos
+                        movimientos = 0;
+                        if (ClaseGlobal._UsuarioActual != null)
+                        {
+                            ClaseGlobal._UsuarioActual.MAXSCORE = currentMap;
+                        }
+                        RefrescaTiles();
+                    }
+                    else 
+                        this.Close();
                 }
             }
         }

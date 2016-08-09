@@ -169,9 +169,6 @@
   <data name="hotspot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hotspot.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoMakr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoMakr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="playerleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\playerleft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,7 +178,7 @@
   <data name="STAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\STAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="titlesmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\titlesmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LogoMakr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoMakr2 - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
