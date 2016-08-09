@@ -5,7 +5,7 @@
 </p>
 
 <p align="center"; font-size: 16px; font-weight: bold>
-![Game Logo](https://raw.githubusercontent.com/RolandoED/BoxGameRolandoED/master/BoxGame/BoxGame/Resources/LogoMakr.png)
+ <img src="https://raw.githubusercontent.com/RolandoED/BoxGameRolandoED/master/BoxGame/BoxGame/Resources/LogoMakr.png" alt="Smiley face" height="100" width="400"> 
 </p>
 
 [URL de Presentacion](https://rolandoed.github.io/Press/#/ "URL of Explanation")
