@@ -71,6 +71,25 @@ namespace BoxGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream back {
+            get {
+                return ResourceManager.GetStream("back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backlogo {
+            get {
+                object obj = ResourceManager.GetObject("backlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap bd {
@@ -234,6 +253,16 @@ namespace BoxGame.Properties {
         internal static System.IO.UnmanagedMemoryStream restart {
             get {
                 return ResourceManager.GetStream("restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restartlogo {
+            get {
+                object obj = ResourceManager.GetObject("restartlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

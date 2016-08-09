@@ -139,6 +139,11 @@ namespace BoxGame
                 return false;        
         }
 
+       /// <summary>
+       /// Si ya esta registrado solo necesita el nick para loguearse
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void ckbxRegistered_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbxRegistered.Checked)
@@ -148,6 +153,11 @@ namespace BoxGame
             }
             else
                 txtNombre.Enabled = true;
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

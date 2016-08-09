@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapEditor));
             this.btnBorde = new System.Windows.Forms.Button();
             this.btnJugador = new System.Windows.Forms.Button();
             this.btnVacio = new System.Windows.Forms.Button();
@@ -1535,6 +1536,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MapEditor";
             this.Text = "Editor de Mapas";
             this.Load += new System.EventHandler(this.MapEditor_Load);

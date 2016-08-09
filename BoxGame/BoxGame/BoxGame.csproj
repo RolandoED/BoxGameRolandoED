@@ -206,7 +206,13 @@
     <None Include="Resources\LogoMakr.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LogoMakr2 - copia.png" />
+    <None Include="Resources\backlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restartlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -40,7 +40,7 @@
             // btnLoguear
             // 
             this.btnLoguear.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLoguear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoguear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoguear.Location = new System.Drawing.Point(162, 229);
             this.btnLoguear.Name = "btnLoguear";
             this.btnLoguear.Size = new System.Drawing.Size(276, 67);
@@ -73,21 +73,21 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(164, 94);
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(273, 23);
+            this.txtNombre.Size = new System.Drawing.Size(273, 26);
             this.txtNombre.TabIndex = 3;
             this.txtNombre.Text = "Rolando2";
             // 
             // txtNickName
             // 
-            this.txtNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNickName.Location = new System.Drawing.Point(164, 149);
             this.txtNickName.MaxLength = 10;
             this.txtNickName.Name = "txtNickName";
-            this.txtNickName.Size = new System.Drawing.Size(273, 23);
+            this.txtNickName.Size = new System.Drawing.Size(273, 26);
             this.txtNickName.TabIndex = 4;
             this.txtNickName.Text = "Rol1";
             // 
@@ -118,6 +118,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Autenticacion";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

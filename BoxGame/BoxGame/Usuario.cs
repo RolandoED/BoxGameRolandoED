@@ -1,9 +1,5 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
+﻿
+/////USUARIO QUE SE Guarda en Clase Global como logueado
 namespace BoxGame
 {
     class Usuario

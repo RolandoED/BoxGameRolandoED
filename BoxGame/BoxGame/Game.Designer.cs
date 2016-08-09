@@ -137,6 +137,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTexto2 = new System.Windows.Forms.Label();
+            this.lblMovsMap = new System.Windows.Forms.Label();
+            this.lblUserNick = new System.Windows.Forms.Label();
+            this.lblTexto3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox91)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox92)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox93)).BeginInit();
@@ -241,23 +245,27 @@
             // 
             // btnRetroceder
             // 
+            this.btnRetroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRetroceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetroceder.Location = new System.Drawing.Point(616, 142);
+            this.btnRetroceder.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRetroceder.Image = global::BoxGame.Properties.Resources.backlogo;
+            this.btnRetroceder.Location = new System.Drawing.Point(616, 119);
             this.btnRetroceder.Name = "btnRetroceder";
-            this.btnRetroceder.Size = new System.Drawing.Size(124, 36);
+            this.btnRetroceder.Size = new System.Drawing.Size(77, 59);
             this.btnRetroceder.TabIndex = 186;
-            this.btnRetroceder.Text = "Back";
             this.btnRetroceder.UseVisualStyleBackColor = true;
             this.btnRetroceder.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnReiniciar
             // 
+            this.btnReiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(616, 73);
+            this.btnReiniciar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnReiniciar.Image = global::BoxGame.Properties.Resources.restartlogo;
+            this.btnReiniciar.Location = new System.Drawing.Point(616, 50);
             this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(124, 40);
+            this.btnReiniciar.Size = new System.Drawing.Size(77, 63);
             this.btnReiniciar.TabIndex = 185;
-            this.btnReiniciar.Text = "Reiniciar Mapa";
             this.btnReiniciar.UseVisualStyleBackColor = true;
             this.btnReiniciar.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -275,7 +283,7 @@
             // 
             this.lblTexto1.AutoSize = true;
             this.lblTexto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTexto1.Location = new System.Drawing.Point(624, 200);
+            this.lblTexto1.Location = new System.Drawing.Point(646, 200);
             this.lblTexto1.Name = "lblTexto1";
             this.lblTexto1.Size = new System.Drawing.Size(116, 24);
             this.lblTexto1.TabIndex = 220;
@@ -1118,11 +1126,55 @@
             this.pictureBox1.TabIndex = 114;
             this.pictureBox1.TabStop = false;
             // 
+            // lblTexto2
+            // 
+            this.lblTexto2.AutoSize = true;
+            this.lblTexto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTexto2.Location = new System.Drawing.Point(570, 281);
+            this.lblTexto2.Name = "lblTexto2";
+            this.lblTexto2.Size = new System.Drawing.Size(192, 24);
+            this.lblTexto2.TabIndex = 225;
+            this.lblTexto2.Text = "Movimientos Minimos";
+            // 
+            // lblMovsMap
+            // 
+            this.lblMovsMap.AutoSize = true;
+            this.lblMovsMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMovsMap.Location = new System.Drawing.Point(710, 327);
+            this.lblMovsMap.Name = "lblMovsMap";
+            this.lblMovsMap.Size = new System.Drawing.Size(30, 18);
+            this.lblMovsMap.TabIndex = 226;
+            this.lblMovsMap.Text = "null";
+            // 
+            // lblUserNick
+            // 
+            this.lblUserNick.AutoSize = true;
+            this.lblUserNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserNick.Location = new System.Drawing.Point(710, 407);
+            this.lblUserNick.Name = "lblUserNick";
+            this.lblUserNick.Size = new System.Drawing.Size(30, 18);
+            this.lblUserNick.TabIndex = 228;
+            this.lblUserNick.Text = "null";
+            // 
+            // lblTexto3
+            // 
+            this.lblTexto3.AutoSize = true;
+            this.lblTexto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTexto3.Location = new System.Drawing.Point(570, 361);
+            this.lblTexto3.Name = "lblTexto3";
+            this.lblTexto3.Size = new System.Drawing.Size(192, 24);
+            this.lblTexto3.TabIndex = 227;
+            this.lblTexto3.Text = "Movimientos Minimos";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 490);
+            this.Controls.Add(this.lblUserNick);
+            this.Controls.Add(this.lblTexto3);
+            this.Controls.Add(this.lblMovsMap);
+            this.Controls.Add(this.lblTexto2);
             this.Controls.Add(this.btnStar3);
             this.Controls.Add(this.btnStar2);
             this.Controls.Add(this.btnStar1);
@@ -1231,6 +1283,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Game";
             this.Load += new System.EventHandler(this.Game_Load);
@@ -1449,5 +1502,9 @@
         private System.Windows.Forms.Button btnStar1;
         private System.Windows.Forms.Button btnStar2;
         private System.Windows.Forms.Button btnStar3;
+        private System.Windows.Forms.Label lblTexto2;
+        private System.Windows.Forms.Label lblMovsMap;
+        private System.Windows.Forms.Label lblUserNick;
+        private System.Windows.Forms.Label lblTexto3;
     }
 }

@@ -17,7 +17,6 @@ namespace BoxGame
     {
         public Map(int[,] arr)
         {
-            // TODO: Complete member initialization
             array = arr;
         }
         public Map()

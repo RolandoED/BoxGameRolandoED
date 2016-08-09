@@ -1,5 +1,4 @@
-﻿
-
+﻿////Objetivo que representa objetos en una posicion X y Y 
 namespace BoxGame
 {
     public class Objective

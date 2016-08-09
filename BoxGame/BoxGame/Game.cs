@@ -87,11 +87,15 @@ namespace BoxGame
                 {
                     currentMap =  (int)(ClaseGlobal._UsuarioActual.MAXSCORE); 
                 }
-                CargaMapadesdeArchivo("map" + ClaseGlobal._UsuarioActual.MAXSCORE);                
+                CargaMapadesdeArchivo("map" + ClaseGlobal._UsuarioActual.MAXSCORE);
+
+                lblUserNick.Text = ClaseGlobal._UsuarioActual.NICK;
             }
             else {
                 currentMap = 1;
                 CargaMapadesdeArchivo("map" + currentMap);
+                lblUserNick.Hide();
+                lblTexto3.Hide();
             }
 
             objectives.Clear();
@@ -153,8 +157,16 @@ namespace BoxGame
             simpleSound.Play();
         }
 
+        public void BackSound()
+        {
+            Stream str = Properties.Resources.back;
+            SoundPlayer simpleSound = new SoundPlayer(str);
+            simpleSound.Play();
+        }
+
         private void mostrarmovimientos() {
             lblMovs.Text = movimientos.ToString();
+            lblMovsMap.Text = Mapa.MaxMovements.ToString();
             lblNivel.Text = "Nivel # " + currentMap;
             int doblemovs = Mapa.MaxMovements * 2;
             if (movimientos <= Mapa.MaxMovements)
@@ -664,7 +676,7 @@ namespace BoxGame
         {
             if (istherearecovery)
             {
-
+                BackSound();
                 for (int i = 0; i < Mapa.array.GetLength(0); i++)
                 {
                     for (int xx = 0; xx < Mapa.array.GetLength(1); xx++)

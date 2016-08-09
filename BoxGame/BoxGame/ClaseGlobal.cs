@@ -11,54 +11,15 @@ namespace BoxGame
 {
     class ClaseGlobal
     {
-        //public static UsuarioGuardado _UsuarioActualGuardado;
+        //usuario actualmente registrado si es nulo es que no se ha registrado
         public static Usuario _UsuarioActual;
 
+        //cantidad de mapas encontrados en el folder maps
         public static int CantMaps = 0;
 
+        //guada el valor true si se encontro un Archivo con el nombre isadmin.txt en el root
         public static Boolean IsAdmin = false;
 
-        //private static string gname = "";
-        //private static string glastname = "";
-
-        //public static string Gname
-        //{
-        //    get { return gname; }
-        //    set { gname = value; }
-        //}
-
-        //public static string Glastname
-        //{
-        //    get { return glastname; }
-        //    set { glastname = value; }
-        //}
-
-
-        public static void ShowMessage(string s)
-        {
-            MessageBox.Show(s, "Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        public static void ShowText(string s)
-        {
-            MessageBox.Show(s, "-",
-            MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static void ShowText(string titulo, string msg)
-        {
-            MessageBox.Show(msg, titulo,
-            MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static void guardarDoc(string filename, string send)
-        {
-            string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
-            StreamWriter sw = new StreamWriter(currentPath + "\\" + filename, true, Encoding.ASCII); //Ruta
-            sw.Write(send);
-            sw.Close();
-        }
 
         /// <summary>
         /// Cuenta cuantos Mapas existen en la carpeta maps
@@ -83,7 +44,7 @@ namespace BoxGame
                         }
                     }
                 }
-                Console.WriteLine("CONTADOR !!!!!!!!!!!!!!!!!!!!: " + cont);
+                Console.WriteLine("CONTADOR !!!!!!!!!: " + cont);
                 return cont+1;
             }
             catch (Exception)
@@ -91,6 +52,41 @@ namespace BoxGame
                 Console.WriteLine("error leyendo la carpeta maps");
                 return 0;
             }            
+        }
+
+        /// <summary>
+        /// Metodos para mostrar mensajes y hacer el codigo mas corto en la parte funcional
+        /// </summary>
+        /// <param name="s"></param>
+        public static void ShowMessage(string s)
+        {
+            MessageBox.Show(s, "Error",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void ShowText(string s)
+        {
+            MessageBox.Show(s, "-",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void ShowText(string titulo, string msg)
+        {
+            MessageBox.Show(msg, titulo,
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Metodo Stub por si se necesitara guardar como TXT algun resultado
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="send"></param>
+        public static void guardarDoc(string filename, string send)
+        {
+            string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+            StreamWriter sw = new StreamWriter(currentPath + "\\" + filename, true, Encoding.ASCII); //Ruta
+            sw.Write(send);
+            sw.Close();
         }
     }
 }
