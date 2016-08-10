@@ -1446,6 +1446,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BoxGame.Properties.Resources.bgedit___upsidedown;
             this.ClientSize = new System.Drawing.Size(970, 510);
             this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.label9);
