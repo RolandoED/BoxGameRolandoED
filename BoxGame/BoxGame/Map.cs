@@ -47,7 +47,6 @@ namespace BoxGame
                 for (int xx = 0; xx < array.GetLength(1); xx++)
                 {
                     toPrint += array[i, xx];
-                    //Console.WriteLine(array[i, xx]);                    
                 }
             }
             Console.WriteLine(toPrint);

@@ -20,6 +20,9 @@ namespace BoxGame
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Llena el grid vide con la info
+        /// </summary>
         private void FillDataGridView()
         {
             string sqlquery;
@@ -38,9 +41,14 @@ namespace BoxGame
 
         private void CRUDUsuario_Load(object sender, EventArgs e)
         {
+            //llena grid view
             FillDataGridView();
         }
-
+        /// <summary>
+        /// Pasa los datos del item seleccional del data grid view a los textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvDatosJugadores_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -60,6 +68,10 @@ namespace BoxGame
             }
         }
 
+        /// <summary>
+        /// Checkea todos los campos no vacios
+        /// </summary>
+        /// <returns></returns>
         private bool CheckAllFields()
         {
             if (txtID.Text.Length > 0 &&
@@ -73,7 +85,15 @@ namespace BoxGame
             else
                 return false;
         }
-
+        /// <summary>
+        /// Checkea todos los campos excepto el ID
+        /// Este metodo es para cuando se actualiza
+        /// la info puesto que el ID es autoincrementable 
+        /// y no es necesario para actualizar los datos que 
+        /// como el campo de nick es UNIQUE en la base de datos
+        /// no pueden haber repetidos
+        /// </summary>
+        /// <returns></returns>
         private bool CheckAllFieldsExceptID()
         {
             if (txtName.Text.Length > 0 &&
@@ -87,6 +107,11 @@ namespace BoxGame
                 return false;
         }
 
+        /// <summary>
+        /// Agrega un usuario a la BD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -139,6 +164,11 @@ namespace BoxGame
             }
         }
 
+        /// <summary>
+        /// Elimina el usuario por ID
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminarporID_Click(object sender, EventArgs e)
         {
             try
@@ -186,6 +216,11 @@ namespace BoxGame
 
         }
 
+        /// <summary>
+        /// Actualiza el usuario con los datos de los textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -236,6 +271,54 @@ namespace BoxGame
                 Console.WriteLine(ex.Data);
                 Console.WriteLine(ex.Message);
                 Console.WriteLine("numbere" + ex.Number);
+            }
+        }
+
+        /// <summary>
+        /// Guarda la tabla players a acrchivo de texto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGuardarEnTexto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sqlquery;
+                string conexion = "Data Source=(local); " +
+                    "Initial Catalog=Sokoban;" +
+                    "Integrated Security=True;";
+                DataTable dt = new DataTable();
+                sqlquery = "SELECT * from Player";
+                SqlConnection sqlconn = new SqlConnection(conexion);
+                sqlconn.Open();
+                SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);
+                sqlda.Fill(dt);
+                sqlconn.Close();
+                //dataGridView1.DataSource = dt;
+
+                string sendtosave = "\r\n";
+                sendtosave += "---------------------------------------\r\n";
+                sendtosave += "\t\tLista De Usuarios\r\n";
+                sendtosave += "---------------------------------------\r\n";
+                sendtosave += "\r\n";
+                sendtosave += "Codigo\tNombre\tNick\tMaxScore\tRank";
+                foreach (DataRow row in dt.Rows)
+                {
+                    sendtosave += "\r\n";
+                    sendtosave += row["ID"].ToString();
+                    sendtosave += "\t" + row["Name"].ToString();
+                    sendtosave += "\t" + row["Nick"].ToString();
+                    sendtosave += "\t" + row["Maxscore"].ToString();
+                    sendtosave += "\t" + row["Rank"].ToString();
+                }
+                //Guarda el archivo
+                Console.WriteLine(sendtosave);
+                ClaseGlobal.guardarDoc("Listadeusuarios.txt", sendtosave);
+                ClaseGlobal.ShowText("Guardado Lista de Jugadores a : \nListadeusuarios.txt");
+            }
+            catch (Exception es)
+            {
+                ClaseGlobal.ShowMessage(es.Message);
             }
         }
 

@@ -1,0 +1,43 @@
+
+---------------------------------------
+		Lista De Usuarios
+---------------------------------------
+
+Codigo	Nombre	Nick	MaxScore	Rank
+24	rolando1	Rol1	7	980
+25	Test	test	4	84
+29	new pla	newplayer	4	75
+32	Rolando2	map6	6	0
+33	Rolando2	map7	7	0
+34	Rolando2	map8	11	135
+35	Rolando2	map9	9	0
+36	Rolando2	map10	10	0
+37	Rolando2	map12	12	0
+---------------------------------------
+		Lista De Usuarios
+---------------------------------------
+
+Codigo	Nombre	Nick	MaxScore	Rank
+24	rolando1	Rol1	7	980
+25	Test	test	4	84
+29	new pla	newplayer	4	75
+32	Rolando2	map6	6	0
+33	Rolando2	map7	7	0
+34	Rolando2	map8	11	135
+35	Rolando2	map9	9	0
+36	Rolando2	map10	10	0
+37	Rolando2	map12	12	0
+---------------------------------------
+		Lista De Usuarios
+---------------------------------------
+
+Codigo	Nombre	Nick	MaxScore	Rank
+24	rolando1	Rol1	7	980
+25	Test	test	4	84
+29	new pla	newplayer	4	75
+32	Rolando2	map6	6	0
+33	Rolando2	map7	7	0
+34	Rolando2	map8	11	135
+35	Rolando2	map9	9	0
+36	Rolando2	map10	10	0
+37	Rolando2	map12	12	0

@@ -150,8 +150,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIntentosActuales = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMaps = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnOpenFolder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox91)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox92)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox93)).BeginInit();
@@ -1241,22 +1242,26 @@
             // 
             // btnDebug1
             // 
-            this.btnDebug1.Location = new System.Drawing.Point(31, 390);
+            this.btnDebug1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDebug1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDebug1.Location = new System.Drawing.Point(31, 401);
             this.btnDebug1.Name = "btnDebug1";
             this.btnDebug1.Size = new System.Drawing.Size(178, 23);
             this.btnDebug1.TabIndex = 218;
             this.btnDebug1.Text = "Analizar Picture boxes";
-            this.btnDebug1.UseVisualStyleBackColor = true;
+            this.btnDebug1.UseVisualStyleBackColor = false;
             this.btnDebug1.Click += new System.EventHandler(this.btnDebug1_Click);
             // 
             // btnDebug2
             // 
-            this.btnDebug2.Location = new System.Drawing.Point(31, 419);
+            this.btnDebug2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDebug2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDebug2.Location = new System.Drawing.Point(31, 424);
             this.btnDebug2.Name = "btnDebug2";
             this.btnDebug2.Size = new System.Drawing.Size(178, 23);
             this.btnDebug2.TabIndex = 219;
             this.btnDebug2.Text = "Asignar el mapa del form al Array";
-            this.btnDebug2.UseVisualStyleBackColor = true;
+            this.btnDebug2.UseVisualStyleBackColor = false;
             this.btnDebug2.Click += new System.EventHandler(this.btnDebug2_Click);
             // 
             // textBox1
@@ -1279,32 +1284,38 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Location = new System.Drawing.Point(69, 319);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 23);
             this.btnGuardar.TabIndex = 222;
             this.btnGuardar.Text = "Guardar Mapa";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.button3_Click);
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardarMapa_Click);
             // 
             // btnLeer
             // 
+            this.btnLeer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLeer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLeer.Location = new System.Drawing.Point(69, 348);
             this.btnLeer.Name = "btnLeer";
             this.btnLeer.Size = new System.Drawing.Size(140, 23);
             this.btnLeer.TabIndex = 223;
             this.btnLeer.Text = "Leer Mapa";
-            this.btnLeer.UseVisualStyleBackColor = true;
-            this.btnLeer.Click += new System.EventHandler(this.button4_Click);
+            this.btnLeer.UseVisualStyleBackColor = false;
+            this.btnLeer.Click += new System.EventHandler(this.btnLeerMapa_Click);
             // 
             // btnDebug3
             // 
-            this.btnDebug3.Location = new System.Drawing.Point(31, 442);
+            this.btnDebug3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDebug3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDebug3.Location = new System.Drawing.Point(31, 448);
             this.btnDebug3.Name = "btnDebug3";
             this.btnDebug3.Size = new System.Drawing.Size(178, 23);
             this.btnDebug3.TabIndex = 224;
             this.btnDebug3.Text = "Ver Array";
-            this.btnDebug3.UseVisualStyleBackColor = true;
+            this.btnDebug3.UseVisualStyleBackColor = false;
             this.btnDebug3.Click += new System.EventHandler(this.btnDebug3_Click);
             // 
             // label2
@@ -1399,13 +1410,14 @@
             this.txtIntentosActuales.Size = new System.Drawing.Size(130, 20);
             this.txtIntentosActuales.TabIndex = 232;
             // 
-            // textBox2
+            // txtMaps
             // 
-            this.textBox2.Location = new System.Drawing.Point(736, 164);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 278);
-            this.textBox2.TabIndex = 233;
+            this.txtMaps.Location = new System.Drawing.Point(736, 164);
+            this.txtMaps.Multiline = true;
+            this.txtMaps.Name = "txtMaps";
+            this.txtMaps.ReadOnly = true;
+            this.txtMaps.Size = new System.Drawing.Size(207, 278);
+            this.txtMaps.TabIndex = 233;
             // 
             // label9
             // 
@@ -1418,14 +1430,26 @@
             this.label9.TabIndex = 234;
             this.label9.Text = "Archivos en la Carpeta  /Maps";
             // 
+            // btnOpenFolder
+            // 
+            this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOpenFolder.Location = new System.Drawing.Point(739, 448);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Size = new System.Drawing.Size(204, 23);
+            this.btnOpenFolder.TabIndex = 235;
+            this.btnOpenFolder.Text = "Abrir Carpeta";
+            this.btnOpenFolder.UseVisualStyleBackColor = false;
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BoxGame.Properties.Resources.bgedit;
             this.ClientSize = new System.Drawing.Size(970, 510);
+            this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtMaps);
             this.Controls.Add(this.txtIntentosActuales);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -1779,7 +1803,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIntentosActuales;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMaps;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnOpenFolder;
     }
 }

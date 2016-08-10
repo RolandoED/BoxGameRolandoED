@@ -167,6 +167,7 @@
             this.Controls.Add(this.btnJugar);
             this.Controls.Add(this.btnEditorNiveles);
             this.Controls.Add(this.btnNuevoJugador);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.Text = "Sokoban";

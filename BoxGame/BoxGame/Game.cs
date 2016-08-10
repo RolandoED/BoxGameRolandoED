@@ -17,15 +17,22 @@ namespace BoxGame
     public partial class Game : Form
     {
         public Map Mapa = new Map();
+        //Mapa que se esta usando actualmente
         public int currentMap = 0;
+        //mapa maximo se toma de la carpeta maps
+        //se cuentan los files que comiencen con el nombre
+        //"map" en el substring(0,3);
         public int maximumMap = 6;
         public int movimientos = 0;
         public int moviemientosbackup = 0;
 
+        //Llevan la posicion del jugador en el mapa para poder hacer calculos
         private int Xpos;
         private int Ypos;
         private int oldXpos = 0;
         private int oldYpos = 0;
+        //maximo en X y Y del array de mapa
+        //como se decidio hacer de 10x10, es estatico en 9
         private int MaxDer = 9;
         private int MaxIzq = 9;
         private Random rand = new Random(DateTime.Now.Millisecond);
@@ -68,27 +75,27 @@ namespace BoxGame
             //boxes[34] = pictureBox35;
         }
 
-        public Objective Objective
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        //public Objective Objective
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
+        //    set
+        //    {
+        //    }
+        //}
 
-        public Map Map
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        //public Map Map
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
+        //    set
+        //    {
+        //    }
+        //}
 
         private void Game_Load(object sender, EventArgs e)
         {

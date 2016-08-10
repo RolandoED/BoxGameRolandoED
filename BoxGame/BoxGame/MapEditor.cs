@@ -12,6 +12,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 //using System.Web.Script.Serialization;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace BoxGame
 {
@@ -36,7 +37,7 @@ namespace BoxGame
 	        {
                 paths += "\n" + Path.GetFileName(item) + "\n\r";
 	        }
-            textBox2.Text = paths;
+            txtMaps.Text = paths;
         }
 
         /// <summary>
@@ -60,6 +61,9 @@ namespace BoxGame
 
         private void MapEditor_Load(object sender, EventArgs e)
         {
+            btnDebug1.Hide();
+            btnDebug2.Hide();
+            btnDebug3.Hide();
             ExisteCarpetaMaps();
             showAllFiles();
             int contador = 0;
@@ -285,7 +289,7 @@ namespace BoxGame
         /// Guarda en el subfolder maps los mapas como objeto serializado con el estado actual
         /// </summary>
         /// 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnGuardarMapa_Click(object sender, EventArgs e)
         {
             if (asignarPicturesBoxexAArray())
             {                            
@@ -325,13 +329,14 @@ namespace BoxGame
             {
                 Console.WriteLine("ERRROR ERROR");
             }
+            showAllFiles();
         }
 
         /// <summary>
         /// Lee  del subfolder maps los mapas como objeto serializado con el estado actual
         /// </summary>
         /// 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnLeerMapa_Click(object sender, EventArgs e)
         {
             try
             {
@@ -379,6 +384,26 @@ namespace BoxGame
         {
             Mapa.printArray();
             PasarArrayAPictureBoxes();
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+                currentPath += "\\maps";
+                if (!Directory.Exists(currentPath))
+                {
+                    ClaseGlobal.ShowText("No existe la carpeta maps.\nCreandola");
+                    Directory.CreateDirectory(currentPath);
+                }
+                else
+                    Process.Start("explorer.exe", currentPath);
+            }
+            catch (IOException eexc)
+            {
+                ClaseGlobal.ShowMessage(eexc.Message);
+            }
         }
 
     }
