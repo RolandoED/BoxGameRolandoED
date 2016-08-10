@@ -19,10 +19,6 @@ Se requiere crear un juego de Push Boxes(Sokoban) en C#, con Base de Datos SQL y
 Demostrar conocimientos adquiridos en la clase de **Programación II** 
 
 ----
+ <img src="https://raw.githubusercontent.com/RolandoED/BoxGameRolandoED/master/BoxGame/GifsAndPNGsforReadme/anim2.gif" alt="Smiley face" height="300" width="300" align=right>
 
 
-<p align="right"; font-size: 16px; font-weight: bold; backgroud-color:gray>
-```cs
-Console.WriteLine("Fenced code blocks ftw!");
-```
-</p>
