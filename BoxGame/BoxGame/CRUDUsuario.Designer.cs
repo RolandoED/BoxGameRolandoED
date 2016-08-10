@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CRUDUsuario));
             this.dgvDatosJugadores = new System.Windows.Forms.DataGridView();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -40,8 +39,8 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.lbl5 = new System.Windows.Forms.Label();
             this.txtRank = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosJugadores)).BeginInit();
             this.SuspendLayout();
@@ -142,25 +141,25 @@
             this.txtRank.Size = new System.Drawing.Size(70, 20);
             this.txtRank.TabIndex = 9;
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(496, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Location = new System.Drawing.Point(496, 37);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(105, 23);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnBorrar
             // 
-            this.button2.Location = new System.Drawing.Point(496, 67);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Eliminar por ID";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBorrar.Location = new System.Drawing.Point(496, 67);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(105, 23);
+            this.btnBorrar.TabIndex = 12;
+            this.btnBorrar.Text = "Eliminar por ID";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnActualizar
             // 
@@ -179,8 +178,8 @@
             this.BackgroundImage = global::BoxGame.Properties.Resources.bgbright;
             this.ClientSize = new System.Drawing.Size(871, 461);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lbl5);
             this.Controls.Add(this.txtRank);
             this.Controls.Add(this.lbl4);
@@ -192,7 +191,6 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.dgvDatosJugadores);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CRUDUsuario";
             this.Text = "Mantenimiento Usuarios";
             this.Load += new System.EventHandler(this.CRUDUsuario_Load);
@@ -215,8 +213,8 @@
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.TextBox txtRank;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnActualizar;
     }
 }

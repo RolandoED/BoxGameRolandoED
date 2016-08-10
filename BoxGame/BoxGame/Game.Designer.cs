@@ -254,7 +254,7 @@
             this.btnRetroceder.Size = new System.Drawing.Size(77, 59);
             this.btnRetroceder.TabIndex = 186;
             this.btnRetroceder.UseVisualStyleBackColor = true;
-            this.btnRetroceder.Click += new System.EventHandler(this.button1_Click);
+            this.btnRetroceder.Click += new System.EventHandler(this.btnRetroceder_Click);
             // 
             // btnReiniciar
             // 
@@ -267,13 +267,13 @@
             this.btnReiniciar.Size = new System.Drawing.Size(77, 63);
             this.btnReiniciar.TabIndex = 185;
             this.btnReiniciar.UseVisualStyleBackColor = true;
-            this.btnReiniciar.Click += new System.EventHandler(this.button3_Click);
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // lblMovs
             // 
             this.lblMovs.AutoSize = true;
             this.lblMovs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovs.Location = new System.Drawing.Point(647, 246);
+            this.lblMovs.Location = new System.Drawing.Point(571, 246);
             this.lblMovs.Name = "lblMovs";
             this.lblMovs.Size = new System.Drawing.Size(30, 18);
             this.lblMovs.TabIndex = 219;
@@ -283,7 +283,7 @@
             // 
             this.lblTexto1.AutoSize = true;
             this.lblTexto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTexto1.Location = new System.Drawing.Point(577, 200);
+            this.lblTexto1.Location = new System.Drawing.Point(570, 200);
             this.lblTexto1.Name = "lblTexto1";
             this.lblTexto1.Size = new System.Drawing.Size(116, 24);
             this.lblTexto1.TabIndex = 220;
@@ -1140,7 +1140,7 @@
             // 
             this.lblMovsMap.AutoSize = true;
             this.lblMovsMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovsMap.Location = new System.Drawing.Point(647, 328);
+            this.lblMovsMap.Location = new System.Drawing.Point(571, 328);
             this.lblMovsMap.Name = "lblMovsMap";
             this.lblMovsMap.Size = new System.Drawing.Size(30, 18);
             this.lblMovsMap.TabIndex = 226;
@@ -1150,7 +1150,7 @@
             // 
             this.lblUserNick.AutoSize = true;
             this.lblUserNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserNick.Location = new System.Drawing.Point(647, 408);
+            this.lblUserNick.Location = new System.Drawing.Point(571, 408);
             this.lblUserNick.Name = "lblUserNick";
             this.lblUserNick.Size = new System.Drawing.Size(30, 18);
             this.lblUserNick.TabIndex = 228;
@@ -1160,16 +1160,17 @@
             // 
             this.lblTexto3.AutoSize = true;
             this.lblTexto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTexto3.Location = new System.Drawing.Point(570, 361);
+            this.lblTexto3.Location = new System.Drawing.Point(570, 362);
             this.lblTexto3.Name = "lblTexto3";
-            this.lblTexto3.Size = new System.Drawing.Size(192, 24);
+            this.lblTexto3.Size = new System.Drawing.Size(152, 24);
             this.lblTexto3.TabIndex = 227;
-            this.lblTexto3.Text = "Movimientos Minimos";
+            this.lblTexto3.Text = "Nick del Jugador";
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(764, 490);
             this.Controls.Add(this.lblUserNick);
             this.Controls.Add(this.lblTexto3);

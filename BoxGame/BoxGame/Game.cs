@@ -28,6 +28,7 @@ namespace BoxGame
         private int oldYpos = 0;
         private int MaxDer = 9;
         private int MaxIzq = 9;
+        private Random rand = new Random(DateTime.Now.Millisecond);
         //Sentido en que se mueve el personaje
         // 1 arriba 2 abajo 3 derecha 4 izq
         private int sentido;
@@ -116,8 +117,15 @@ namespace BoxGame
             else {
                 currentMap = 1;
                 CargaMapadesdeArchivo("map" + currentMap);
-                lblUserNick.Hide();
-                lblTexto3.Hide();
+                //lblUserNick.Hide();
+                //lblTexto3.Hide();
+                // Asigna un nombre random
+                string nombreRandomNumerico = "";
+                for (int i = 0; i < 5; i++)
+                {
+                    nombreRandomNumerico += GetRandomNumber();
+                }
+                lblUserNick.Text = nombreRandomNumerico;
             }
 
             objectives.Clear();
@@ -151,6 +159,17 @@ namespace BoxGame
         }
 
 
+
+        public int GetRandomNumber()
+        {
+            int Send = rand.Next(9);
+            return Send;
+
+        }
+
+        /// <summary>
+        /// SONIDOS desde RESOURCE
+        /// </summary>
         public void KickSound()
         {
             Stream str = Properties.Resources.kick;
@@ -186,6 +205,7 @@ namespace BoxGame
             simpleSound.Play();
         }
 
+        //Modifica las estrellas depende de los movimientos realizados
         private void mostrarmovimientos() {
             lblMovs.Text = movimientos.ToString();
             lblMovsMap.Text = Mapa.MaxMovements.ToString();
@@ -209,6 +229,7 @@ namespace BoxGame
                 btnStar3.Hide();
             }
         }
+
 
         private void RefrescaPosdeJugador()
         {
@@ -304,6 +325,9 @@ namespace BoxGame
                         //Aumenta Moviemientos
                         movimientos++;
                     }
+                }
+                else {
+                    BumpSound();
                 }
                 RefrescaTiles();
                 return true;
@@ -694,7 +718,7 @@ namespace BoxGame
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRetroceder_Click(object sender, EventArgs e)
         {
             if (istherearecovery)
             {
@@ -788,6 +812,22 @@ namespace BoxGame
             }
         }
 
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            RestartSound();
+
+            CargaMapadesdeArchivo("map" + currentMap);
+            objectives.Clear();
+            //recoverymap.array = Mapa.array;
+            firstmap.array = Mapa.array;
+            istherearecovery = false;
+            sentido = 2;
+            RefrescaPosdeJugador();
+            //Reinicia Moviemientos
+            movimientos = 0;
+            RefrescaTiles();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             //CargaMapadesdeArchivo(textBox1.Text);
@@ -817,22 +857,6 @@ namespace BoxGame
             //sentido = 2;
             //RefrescaPosdeJugador();
             //RefrescaTiles();    
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RestartSound();
-
-            CargaMapadesdeArchivo("map" + currentMap);
-            objectives.Clear();
-            //recoverymap.array = Mapa.array;
-            firstmap.array = Mapa.array;
-            istherearecovery = false;
-            sentido = 2;
-            RefrescaPosdeJugador();
-            //Reinicia Moviemientos
-            movimientos = 0;
-            RefrescaTiles();
         }
 
     }

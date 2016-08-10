@@ -20,6 +20,7 @@ Demostrar conocimientos adquiridos en la clase de **Programación II**
 
 ----
 
+
 <p align="right"; font-size: 16px; font-weight: bold; backgroud-color:gray>
 ```cs
 Console.WriteLine("Fenced code blocks ftw!");

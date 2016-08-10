@@ -102,10 +102,11 @@ namespace BoxGame
                     SqlCommand sqlcomm = new SqlCommand();
                     DataTable dt = new DataTable();
                     sqlquery =
-                    "UPDATE Player " +
-                    "SET MAXSCORE = " + ClaseGlobal._UsuarioActual.MAXSCORE + ", " +
-                    " RANK = " + ClaseGlobal._UsuarioActual.RANK + "  " +
-                    " WHERE Nick =  '" + ClaseGlobal._UsuarioActual.NICK + "' ;"
+                    "INSERT INTO Player " +
+                    "VALUES ('" + txtName.Text + "', " +
+                     "'"+txtNickName.Text + "', " +
+                     txtMaxscore.Text + ", " +
+                     txtRank.Text + " ) ;";
                     ;
 
                     sqlcomm.Connection = sqlconn;
@@ -134,7 +135,7 @@ namespace BoxGame
                 Console.WriteLine(ex.GetType());
                 Console.WriteLine(ex.Data);
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("numbere" + ex.Number);
+                Console.WriteLine("number" + ex.Number);
             }
         }
 
