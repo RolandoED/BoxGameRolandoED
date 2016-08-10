@@ -87,7 +87,7 @@ namespace BoxGame
                 return false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -139,7 +139,7 @@ namespace BoxGame
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnEliminarporID_Click(object sender, EventArgs e)
         {
             try
             {

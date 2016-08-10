@@ -48,9 +48,9 @@
             // dgvDatosJugadores
             // 
             this.dgvDatosJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosJugadores.Location = new System.Drawing.Point(91, 232);
+            this.dgvDatosJugadores.Location = new System.Drawing.Point(134, 232);
             this.dgvDatosJugadores.Name = "dgvDatosJugadores";
-            this.dgvDatosJugadores.Size = new System.Drawing.Size(692, 217);
+            this.dgvDatosJugadores.Size = new System.Drawing.Size(632, 217);
             this.dgvDatosJugadores.TabIndex = 0;
             this.dgvDatosJugadores.SelectionChanged += new System.EventHandler(this.dgvDatosJugadores_SelectionChanged);
             // 
@@ -143,29 +143,29 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(496, 37);
+            this.btnAgregar.Location = new System.Drawing.Point(439, 47);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(105, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(122, 46);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(496, 67);
+            this.btnBorrar.Location = new System.Drawing.Point(439, 99);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(105, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(122, 46);
             this.btnBorrar.TabIndex = 12;
             this.btnBorrar.Text = "Eliminar por ID";
             this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.button2_Click);
+            this.btnBorrar.Click += new System.EventHandler(this.btnEliminarporID_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(496, 97);
+            this.btnActualizar.Location = new System.Drawing.Point(439, 151);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(105, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(122, 46);
             this.btnActualizar.TabIndex = 13;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BoxGame.Properties.Resources.bgbright;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(871, 461);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnBorrar);
