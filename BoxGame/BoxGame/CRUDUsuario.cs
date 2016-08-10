@@ -20,7 +20,8 @@ namespace BoxGame
             InitializeComponent();
         }
 
-        private void FillDataGridView() {
+        private void FillDataGridView()
+        {
             string sqlquery;
             string conexion = "Data Source=(local); " +
                 "Initial Catalog=Sokoban;" +
@@ -50,7 +51,7 @@ namespace BoxGame
                     txtName.Text = dgvDatosJugadores.SelectedRows[0].Cells[1].Value.ToString();
                     txtNickName.Text = dgvDatosJugadores.SelectedRows[0].Cells[2].Value.ToString();
                     txtMaxscore.Text = dgvDatosJugadores.SelectedRows[0].Cells[3].Value.ToString();
-                    txtRank.Text = dgvDatosJugadores.SelectedRows[0].Cells[4].Value.ToString();          
+                    txtRank.Text = dgvDatosJugadores.SelectedRows[0].Cells[4].Value.ToString();
                 }
             }
             catch (Exception)
@@ -59,7 +60,8 @@ namespace BoxGame
             }
         }
 
-        private bool CheckAllFields() {
+        private bool CheckAllFields()
+        {
             if (txtID.Text.Length > 0 &&
                 txtName.Text.Length > 0 &&
                 txtNickName.Text.Length > 0 &&
@@ -88,7 +90,7 @@ namespace BoxGame
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            {            
+            {
                 if (CheckAllFieldsExceptID() == true)
                 {
                     string conexion = "Data Source=(local); " +
@@ -123,16 +125,16 @@ namespace BoxGame
             {
                 if (ex.Number == 2627)
                 {
-                    ClaseGlobal.ShowMessage("Ya existe un Jugador con el Nick "+ txtNickName.Text);
+                    ClaseGlobal.ShowMessage("Ya existe un Jugador con el Nick " + txtNickName.Text);
                 }
                 else
                 {
-                    ClaseGlobal.ShowMessage("El formato de los Numeros Es Incorrecto");                    
+                    ClaseGlobal.ShowMessage("El formato de los Numeros Es Incorrecto");
                 }
                 Console.WriteLine(ex.GetType());
                 Console.WriteLine(ex.Data);
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("numbere"+ex.Number);
+                Console.WriteLine("numbere" + ex.Number);
             }
         }
 
@@ -164,7 +166,7 @@ namespace BoxGame
                 }
                 else
                     ClaseGlobal.ShowText("No se tiene ID para elminar el usuario");
-                }
+            }
             catch (SqlException ex)
             {
                 if (ex.Number == 2627)
@@ -207,7 +209,7 @@ namespace BoxGame
                     " RANK = " + txtRank.Text + " " +
                     " WHERE ID = " + txtID.Text + ";";
 
-                    Console.WriteLine("sql: "+sqlquery);
+                    Console.WriteLine("sql: " + sqlquery);
                     sqlcomm.Connection = sqlconn;
                     sqlcomm.CommandText = sqlquery;
                     sqlcomm.CommandType = CommandType.Text;

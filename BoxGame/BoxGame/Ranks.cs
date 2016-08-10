@@ -52,11 +52,120 @@ namespace BoxGame
                 //listitem.SubItems.Add(dr["fk_int_Company_ID"].ToString());
                 listView1.Items.Add(listitem);
             }
+
+            //FillDataGridView();
         }
+
+        //private void FillDataGridView()
+        //{
+        //    string sqlquery;
+        //    string conexion = "Data Source=(local); " +
+        //        "Initial Catalog=Sokoban;" +
+        //        "Integrated Security=True;";
+        //    DataTable dt = new DataTable();
+        //    sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY  RANK DESC;";
+        //    SqlConnection sqlconn = new SqlConnection(conexion);
+        //    sqlconn.Open();
+        //    SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);
+        //    sqlda.Fill(dt);
+        //    sqlconn.Close();
+        //    dataGridView1.DataSource = dt;
+        //}
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOrderbyNick_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            string sqlquery;
+            string conexion = "Data Source=(local); " +
+                "Initial Catalog=Sokoban;" +
+                "Integrated Security=True;";
+            DataTable dt = new DataTable();
+            ///Seleccionar todo desde Jugador donde la puntuacion sea mayor
+            sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY NICK DESC;";
+            SqlConnection sqlconn = new SqlConnection(conexion);
+            sqlconn.Open();
+            SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);
+            sqlda.Fill(dt);
+            sqlconn.Close();
+            listView1.View = View.Details;
+
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listitem = new ListViewItem(dr["NICK"].ToString());
+                listitem.SubItems.Add(dr["MAXSCORE"].ToString());
+                listitem.SubItems.Add(dr["RANK"].ToString());
+                //listitem.SubItems.Add(dr["fk_int_Company_ID"].ToString());
+                listView1.Items.Add(listitem);
+            }
+
+            //FillDataGridView();
+        }
+
+        private void btnOrderbyScore_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            string sqlquery;
+            string conexion = "Data Source=(local); " +
+                "Initial Catalog=Sokoban;" +
+                "Integrated Security=True;";
+            DataTable dt = new DataTable();
+            ///Seleccionar todo desde Jugador donde la puntuacion sea mayor
+            sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY MAXSCORE DESC;";
+            SqlConnection sqlconn = new SqlConnection(conexion);
+            sqlconn.Open();
+            SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);
+            sqlda.Fill(dt);
+            sqlconn.Close();
+            listView1.View = View.Details;
+
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listitem = new ListViewItem(dr["NICK"].ToString());
+                listitem.SubItems.Add(dr["MAXSCORE"].ToString());
+                listitem.SubItems.Add(dr["RANK"].ToString());
+                //listitem.SubItems.Add(dr["fk_int_Company_ID"].ToString());
+                listView1.Items.Add(listitem);
+            }
+
+            //FillDataGridView();
+        }
+
+        private void btnOrderbyRank_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            string sqlquery;
+            string conexion = "Data Source=(local); " +
+                "Initial Catalog=Sokoban;" +
+                "Integrated Security=True;";
+            DataTable dt = new DataTable();
+            ///Seleccionar todo desde Jugador donde la puntuacion sea mayor
+            sqlquery = "SELECT TOP 20 NICK , MAXSCORE, RANK  FROM PLAYER ORDER BY RANK DESC;";
+            SqlConnection sqlconn = new SqlConnection(conexion);
+            sqlconn.Open();
+            SqlDataAdapter sqlda = new SqlDataAdapter(sqlquery, sqlconn);
+            sqlda.Fill(dt);
+            sqlconn.Close();
+            listView1.View = View.Details;
+
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listitem = new ListViewItem(dr["NICK"].ToString());
+                listitem.SubItems.Add(dr["MAXSCORE"].ToString());
+                listitem.SubItems.Add(dr["RANK"].ToString());
+                //listitem.SubItems.Add(dr["fk_int_Company_ID"].ToString());
+                listView1.Items.Add(listitem);
+            }
         }
 
     }

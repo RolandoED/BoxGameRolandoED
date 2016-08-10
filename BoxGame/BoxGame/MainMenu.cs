@@ -23,6 +23,50 @@ namespace BoxGame
             InitializeComponent();
         }
 
+        public Ranks Ranks
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Login Login
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public MapEditor MapEditor
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Game Game
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             Ranks frm2 = new Ranks();
@@ -62,34 +106,46 @@ namespace BoxGame
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (ClaseGlobal._UsuarioActual != null)
+            var result = MessageBox.Show("Desea Salir del Juego ?", "Aviso",
+                     MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                Console.WriteLine("Guardando Info del usuario");
-                string conexion = "Data Source=(local); " +
-                    "Initial Catalog=Sokoban;" +
-                    "Integrated Security=True;";
-                string sqlquery;
-                SqlConnection sqlconn = new SqlConnection(conexion);
-                sqlconn.Open();
-                SqlCommand sqlcomm = new SqlCommand();
+                if (ClaseGlobal._UsuarioActual != null)
+                {
+                    Console.WriteLine("Guardando Info del usuario");
+                    string conexion = "Data Source=(local); " +
+                        "Initial Catalog=Sokoban;" +
+                        "Integrated Security=True;";
+                    string sqlquery;
+                    SqlConnection sqlconn = new SqlConnection(conexion);
+                    sqlconn.Open();
+                    SqlCommand sqlcomm = new SqlCommand();
 
-                DataTable dt = new DataTable();
+                    DataTable dt = new DataTable();
 
-                sqlquery =
-                "UPDATE Player " +
-                "SET MAXSCORE = "+ClaseGlobal._UsuarioActual.MAXSCORE+", " +
-                " RANK = " + ClaseGlobal._UsuarioActual.RANK + "  " +
-                " WHERE Nick =  '" + ClaseGlobal._UsuarioActual.NICK + "' ;"
-                ;
-                Console.WriteLine("query "+sqlquery);
+                    sqlquery =
+                    "UPDATE Player " +
+                    "SET MAXSCORE = "+ClaseGlobal._UsuarioActual.MAXSCORE+", " +
+                    " RANK = " + ClaseGlobal._UsuarioActual.RANK + "  " +
+                    " WHERE Nick =  '" + ClaseGlobal._UsuarioActual.NICK + "' ;"
+                    ;
+                    Console.WriteLine("query "+sqlquery);
 
-                sqlcomm.Connection = sqlconn;
-                sqlcomm.CommandText = sqlquery;
-                sqlcomm.CommandType = CommandType.Text;
-                sqlcomm.ExecuteNonQuery();
-                sqlconn.Close();
+                    sqlcomm.Connection = sqlconn;
+                    sqlcomm.CommandText = sqlquery;
+                    sqlcomm.CommandType = CommandType.Text;
+                    sqlcomm.ExecuteNonQuery();
+                    sqlconn.Close();
+                    ClaseGlobal.ShowText("Guardando Info del Usuario");
+                    this.Close();
+                }
+                else if (ClaseGlobal._UsuarioActual == null)
+                {
+                    this.Close();
+                }                
             }
-            this.Close();
+
         }
 
         private void btnJugar_Click(object sender, EventArgs e)
@@ -106,25 +162,6 @@ namespace BoxGame
                 {
                     Game frmJuego = new Game();
                     frmJuego.Show();
-                    //if (textBox1.Text != "")
-                    //{
-                    //    person1.Id = Convert.ToInt16(textBox1.Text);
-                    //}
-                    //person1.Name = textBox2.Text;
-                    //person1.LastName = textBox3.Text;
-
-                    //resul = person1.NewData(person1);
-                    //if (resul == true)
-                    //{
-                    //    message = "Información guardada";
-                    //}
-                    //else
-                    //{
-                    //    message = "No se guardó la información, los registros están llenos";
-                    //}
-                    //result = MessageBox.Show(message, "Aviso",
-                    //                     MessageBoxButtons.OK,
-                    //                     MessageBoxIcon.Question);
                 }
             }
         else
@@ -144,6 +181,19 @@ namespace BoxGame
         {
             Login login = new Login();
             login.Show();
+        }
+
+        private void btnPuntuacion_Click(object sender, EventArgs e)
+        {
+            if (ClaseGlobal._UsuarioActual != null)
+            {
+                ClaseGlobal.ShowText("-Usuario Actual-", "Nickname: " + ClaseGlobal._UsuarioActual.NICK + "\n"
+                    + "Mapa Maximo Alcanzado :" + ClaseGlobal._UsuarioActual.MAXSCORE + "\n"
+                    + "Puntos :" + ClaseGlobal._UsuarioActual.RANK + "\n"
+                    );
+            }
+            else
+                ClaseGlobal.ShowText("No se ha autenticado");
         }
     }
 }

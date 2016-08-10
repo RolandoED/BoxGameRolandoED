@@ -20,6 +20,17 @@ namespace BoxGame
             InitializeComponent();
         }
 
+        internal ClaseGlobal ClaseGlobal
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         private void btnLoguear_Click(object sender, EventArgs e)
         {
             if (ckbxRegistered.Checked)
@@ -160,4 +171,8 @@ namespace BoxGame
 
         }
     }
+
+   public class Class1
+   {
+   }
 }

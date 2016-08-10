@@ -8,7 +8,18 @@ namespace BoxGame
         public string NAME      { get; set; } 
         public string NICK      { get; set; } 
         public float MAXSCORE   { get; set; } 
-        public float RANK       { get; set; } 
+        public float RANK       { get; set; }
+
+        public Login Login
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        } 
                                   
         public Usuario() 
         {

@@ -245,7 +245,7 @@
             // 
             // btnRetroceder
             // 
-            this.btnRetroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetroceder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetroceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetroceder.ForeColor = System.Drawing.Color.Transparent;
             this.btnRetroceder.Image = global::BoxGame.Properties.Resources.backlogo;
@@ -258,7 +258,7 @@
             // 
             // btnReiniciar
             // 
-            this.btnReiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReiniciar.ForeColor = System.Drawing.Color.Transparent;
             this.btnReiniciar.Image = global::BoxGame.Properties.Resources.restartlogo;
@@ -273,7 +273,7 @@
             // 
             this.lblMovs.AutoSize = true;
             this.lblMovs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovs.Location = new System.Drawing.Point(710, 235);
+            this.lblMovs.Location = new System.Drawing.Point(647, 246);
             this.lblMovs.Name = "lblMovs";
             this.lblMovs.Size = new System.Drawing.Size(30, 18);
             this.lblMovs.TabIndex = 219;
@@ -283,7 +283,7 @@
             // 
             this.lblTexto1.AutoSize = true;
             this.lblTexto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTexto1.Location = new System.Drawing.Point(646, 200);
+            this.lblTexto1.Location = new System.Drawing.Point(577, 200);
             this.lblTexto1.Name = "lblTexto1";
             this.lblTexto1.Size = new System.Drawing.Size(116, 24);
             this.lblTexto1.TabIndex = 220;
@@ -328,7 +328,7 @@
             // 
             // pictureBox91
             // 
-            this.pictureBox91.Location = new System.Drawing.Point(520, 425);
+            this.pictureBox91.Location = new System.Drawing.Point(520, 426);
             this.pictureBox91.Name = "pictureBox91";
             this.pictureBox91.Size = new System.Drawing.Size(43, 41);
             this.pictureBox91.TabIndex = 217;
@@ -408,7 +408,7 @@
             // 
             // pictureBox81
             // 
-            this.pictureBox81.Location = new System.Drawing.Point(520, 384);
+            this.pictureBox81.Location = new System.Drawing.Point(520, 386);
             this.pictureBox81.Name = "pictureBox81";
             this.pictureBox81.Size = new System.Drawing.Size(43, 41);
             this.pictureBox81.TabIndex = 207;
@@ -488,7 +488,7 @@
             // 
             // pictureBox71
             // 
-            this.pictureBox71.Location = new System.Drawing.Point(520, 344);
+            this.pictureBox71.Location = new System.Drawing.Point(520, 345);
             this.pictureBox71.Name = "pictureBox71";
             this.pictureBox71.Size = new System.Drawing.Size(43, 41);
             this.pictureBox71.TabIndex = 197;
@@ -1140,7 +1140,7 @@
             // 
             this.lblMovsMap.AutoSize = true;
             this.lblMovsMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovsMap.Location = new System.Drawing.Point(710, 327);
+            this.lblMovsMap.Location = new System.Drawing.Point(647, 328);
             this.lblMovsMap.Name = "lblMovsMap";
             this.lblMovsMap.Size = new System.Drawing.Size(30, 18);
             this.lblMovsMap.TabIndex = 226;
@@ -1150,7 +1150,7 @@
             // 
             this.lblUserNick.AutoSize = true;
             this.lblUserNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserNick.Location = new System.Drawing.Point(710, 407);
+            this.lblUserNick.Location = new System.Drawing.Point(647, 408);
             this.lblUserNick.Name = "lblUserNick";
             this.lblUserNick.Size = new System.Drawing.Size(30, 18);
             this.lblUserNick.TabIndex = 228;

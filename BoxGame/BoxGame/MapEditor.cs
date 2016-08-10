@@ -380,5 +380,6 @@ namespace BoxGame
             Mapa.printArray();
             PasarArrayAPictureBoxes();
         }
+
     }
 }

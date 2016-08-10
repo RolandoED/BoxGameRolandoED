@@ -37,6 +37,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCRUDUsuarios = new System.Windows.Forms.Button();
+            this.btnPuntuacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,18 +111,18 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(472, 29);
+            this.pictureBox2.Location = new System.Drawing.Point(343, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(713, 190);
+            this.pictureBox2.Size = new System.Drawing.Size(716, 207);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BoxGame.Properties.Resources.Animation;
-            this.pictureBox1.Location = new System.Drawing.Point(791, 225);
+            this.pictureBox1.Image = global::BoxGame.Properties.Resources.anim2;
+            this.pictureBox1.Location = new System.Drawing.Point(802, 146);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(430, 323);
+            this.pictureBox1.Size = new System.Drawing.Size(428, 404);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -138,16 +139,30 @@
             this.btnCRUDUsuarios.UseVisualStyleBackColor = false;
             this.btnCRUDUsuarios.Click += new System.EventHandler(this.btnCRUDUsuarios_Click);
             // 
+            // btnPuntuacion
+            // 
+            this.btnPuntuacion.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPuntuacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPuntuacion.Location = new System.Drawing.Point(343, 304);
+            this.btnPuntuacion.Name = "btnPuntuacion";
+            this.btnPuntuacion.Size = new System.Drawing.Size(281, 73);
+            this.btnPuntuacion.TabIndex = 9;
+            this.btnPuntuacion.Text = "Ver Puntuación Actual";
+            this.btnPuntuacion.UseVisualStyleBackColor = false;
+            this.btnPuntuacion.Click += new System.EventHandler(this.btnPuntuacion_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1300, 618);
+            this.ClientSize = new System.Drawing.Size(1267, 607);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnPuntuacion);
             this.Controls.Add(this.btnCRUDUsuarios);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRankins);
             this.Controls.Add(this.btnJugar);
             this.Controls.Add(this.btnEditorNiveles);
@@ -172,6 +187,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCRUDUsuarios;
+        private System.Windows.Forms.Button btnPuntuacion;
     }
 }
 

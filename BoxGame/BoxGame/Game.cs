@@ -67,6 +67,28 @@ namespace BoxGame
             //boxes[34] = pictureBox35;
         }
 
+        public Objective Objective
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Map Map
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         private void Game_Load(object sender, EventArgs e)
         {
             maximumMap = ClaseGlobal.AnalizarCuantosMapasHay();
@@ -273,7 +295,7 @@ namespace BoxGame
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        GurdarMapaRecuperacion();
+                        GuardarMapaRecuperacion();
                         sentido = 3;
                         Mapa.array[Xpos, (Ypos)] = 2;
                         Mapa.array[Xpos, (Ypos + 1)] = 1;
@@ -321,7 +343,7 @@ namespace BoxGame
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        GurdarMapaRecuperacion();
+                        GuardarMapaRecuperacion();
                         sentido = 4;
                         Mapa.array[Xpos, (Ypos)] = 2;
                         Mapa.array[Xpos, (Ypos - 1)] = 1;
@@ -369,7 +391,7 @@ namespace BoxGame
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        GurdarMapaRecuperacion();
+                        GuardarMapaRecuperacion();
                         sentido = 1;
                         Mapa.array[(Xpos), Ypos] = 2;
                         Mapa.array[(Xpos - 1), Ypos] = 1;
@@ -418,7 +440,7 @@ namespace BoxGame
                     {
                         Console.WriteLine("Mueve Bloque");
                         KickSound();
-                        GurdarMapaRecuperacion();
+                        GuardarMapaRecuperacion();
                         sentido = 2;
                         Mapa.array[(Xpos), Ypos] = 2;
                         Mapa.array[(Xpos + 1), Ypos] = 1;
@@ -548,7 +570,7 @@ namespace BoxGame
         /// <summary>
         /// Guarda el Mapa de recuperacion en memoria
         /// </summary>
-        private void GurdarMapaRecuperacion()
+        private void GuardarMapaRecuperacion()
         {
             for (int i = 0; i < Mapa.array.GetLength(0); i++)
             {
@@ -709,7 +731,7 @@ namespace BoxGame
                     Mapa.array = recuperado.array;
                     Mapa.MaxMovements = recuperado.MaxMovements;
                     firstmap.array = recuperado.array;
-                    GurdarMapaRecuperacion();
+                    GuardarMapaRecuperacion();
                 }
                 Console.WriteLine("Se leyo correctamente el archivo Binario");
                 //txtIntentosActuales.Text = "" + Mapa.MaxMovements;

@@ -128,9 +128,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Animation.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\isolatedtile.png" />
   </ItemGroup>
   <ItemGroup>
@@ -144,9 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\terr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\title.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bump.wav" />
@@ -168,12 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\playerleft.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\playerright.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\playerup.png" />
@@ -203,9 +191,6 @@
     <None Include="Resources\goomba.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LogoMakr.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\backlogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +198,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgedit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoMakr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anim2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
