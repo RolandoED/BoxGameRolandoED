@@ -7,6 +7,8 @@
 
 [URL de Presentacion](https://rolandoed.github.io/Press/#/ "URL of Explanation")
 
+ <img src="https://raw.githubusercontent.com/RolandoED/BoxGameRolandoED/master/BoxGame/GifsAndPNGsforReadme/anim2.gif" alt="Smiley face" height="300" width="300" align="center">
+
 ---
 
 ##Explicación del Problema
@@ -19,6 +21,5 @@ Se requiere crear un juego de Push Boxes(Sokoban) en C#, con Base de Datos SQL y
 Demostrar conocimientos adquiridos en la clase de **Programación II** 
 
 ----
- <img src="https://raw.githubusercontent.com/RolandoED/BoxGameRolandoED/master/BoxGame/GifsAndPNGsforReadme/anim2.gif" alt="Smiley face" height="300" width="300" align=right>
 
 
